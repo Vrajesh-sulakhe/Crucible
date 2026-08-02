@@ -1,0 +1,66 @@
+Copyright (c) 2026 <Your Name / Team Name>.
+All Rights Reserved.
+
+This repository contains the source code for a submission to UniLog / UniHack
+2026 (the "Submission").
+
+Except as expressly stated below, no license or other rights are granted to any
+person or organization.
+
+──────────────────────────────────────────────────────────────────────
+LIMITED EVALUATION LICENSE
+──────────────────────────────────────────────────────────────────────
+
+You may:
+
+• View and inspect the source code.
+• Run the software locally, or via the hosted evaluation build provided by the
+  author(s), solely for the purpose of evaluating the Submission.
+
+No other rights are granted.
+
+──────────────────────────────────────────────────────────────────────
+RESTRICTIONS
+──────────────────────────────────────────────────────────────────────
+
+Without prior written permission from the copyright holder(s), you may NOT:
+
+• Modify or create derivative works.
+• Copy or redistribute any portion of this repository.
+• Publish, mirror, sublicense, or re-host the source code.
+• Use the software or any portion of it in any commercial product or service.
+• Train AI models using this source code or any substantial portion of it.
+• Reverse engineer the implementation for commercial replication.
+
+──────────────────────────────────────────────────────────────────────
+INTELLECTUAL PROPERTY
+──────────────────────────────────────────────────────────────────────
+
+All intellectual property rights remain the exclusive property of the
+author(s), except as required under the official UniLog / UniHack 2026
+Terms & Conditions.
+
+If this Submission is confirmed as a winning entry, ownership of the IP rights
+in the winning solution will transfer to the program organizers in accordance
+with the official event rules.
+
+If this Submission is not selected as a winning entry, all intellectual
+property rights remain with the author(s).
+
+Nothing in this notice modifies, limits, or supersedes the official event
+Terms & Conditions.
+
+──────────────────────────────────────────────────────────────────────
+DISCLAIMER
+──────────────────────────────────────────────────────────────────────
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+LIABILITY ARISING FROM THE USE OF THIS SOFTWARE.
+
+──────────────────────────────────────────────────────────────────────
+
+For licensing inquiries or commercial use, contact the author(s).
