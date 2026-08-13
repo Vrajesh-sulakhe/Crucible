@@ -1,0 +1,6 @@
+file_name,sku,brand,category,text_extractable,page_count,notes
+SKF_Rolling_Bearings_6205.pdf,6205-2RSH,SKF,Deep Groove Ball Bearings,true,4,Official manufacturer datasheet with dimensional tables
+NSK_Miniature_and_Small_Bearings.pdf,6000-ZZ,NSK,Deep Groove Ball Bearings,true,12,Shielded deep groove ball bearing specifications
+FAG_Ball_Bearings_Catalog.pdf,6308-2RS,FAG (Schaeffler),Deep Groove Ball Bearings,true,90,High capacity deep groove ball bearing catalog
+Timken_Tapered_Roller_Bearings.pdf,32005-X,Timken,Tapered Roller Bearings,true,210,Metric single-row tapered roller bearing catalog
+NTN_Ball_and_Roller_Bearings.pdf,6204-OPEN,NTN,Deep Groove Ball Bearings,true,54,Standard radial bearing catalog

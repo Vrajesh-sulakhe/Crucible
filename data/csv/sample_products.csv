@@ -1,0 +1,11 @@
+sku,product_name,category,bore_diameter,outer_diameter,width,weight,dynamic_load,static_load,limiting_speed,material,seals,standards
+6205-2RSH,Deep Groove Ball Bearing 6205,Ball Bearings,25 mm,52 mm,15 mm,0.13 kg,14.8 kN,7.8 kN,8500 rpm,Chrome Steel (52100),Rubber Contact Seal (2RSH),ISO 15 / DIN 625
+6000-ZZ,Shielded Deep Groove Ball Bearing 6000,Bearings,10 mm,26 mm,8 mm,19 g,4.75 kN,1.96 kN,22000 rpm,Chrome Steel,Non-contact Metal Shield (ZZ),ISO 15
+6308-2RS,High Capacity Deep Groove Ball Bearing,Radial Bearings,40 mm,90 mm,23 mm,0.64 kg,42.5 kN,24.0 kN,5300 rpm,High Carbon Chrome Steel,Nitrile Rubber (2RS),DIN 625-1
+32005-X,Tapered Roller Bearing Single Row,Roller Bearings,25 mm,47 mm,15 mm,0.12 kg,28.5 kN,32.5 kN,7500 rpm,Case Carburized Alloy Steel,Open,ISO 355
+6204-OPEN,Open Type Deep Groove Ball Bearing,bearing,20 mm,47 mm,14 mm,0.11 kg,13.5 kN,6.55 kN,18000 rpm,bearing steel,Open,ISO 15
+6206-C3,Deep Groove Ball Bearing Radial Clearance C3,Ball Bearing,30 mm,62 mm,16 mm,0.20 kg,20.3 kN,11.2 kN,11000 rpm,AISI 52100,Open,ISO 5753-1 / DIN 625
+7206-B-TVP,Single Row Angular Contact Ball Bearing,Angular Contact,30 mm,62 mm,16 mm,0.21 kg,22.4 kN,13.7 kN,12000 rpm,Chrome Steel,Open,DIN 628-1
+22208-E,Spherical Roller Bearing Cylindrical Bore,Spherical Roller,40 mm,80 mm,23 mm,0.53 kg,96.5 kN,90.0 kN,6000 rpm,Bearing Steel,Open,ISO 15
+608-2RS-SKATE,Miniature Skate Ball Bearing,Miniature Bearings,8 mm,22 mm,7 mm,0.012 kg,3.3 kN,1.37 kN,34000 rpm,Stainless Steel 440C,Rubber Seal (2RS),ABEC-7
+6805-2RS,Thin Section Deep Groove Ball Bearing,Thin Section,25 mm,37 mm,7 mm,0.022 kg,4.3 kN,2.6 kN,11000 rpm,Chrome Steel,Rubber Seals,ISO 15

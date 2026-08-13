@@ -1,0 +1,1653 @@
+[
+  {
+    "sku": "6205-2RSH",
+    "product_name": "Deep Groove Ball Bearing 6205-2RSH",
+    "overall_confidence": 0.94,
+    "overall_status": "validated",
+    "fields": {
+      "sku": {
+        "field": "sku",
+        "final_value": "6205-2RSH",
+        "status": "validated",
+        "confidence": 0.98,
+        "candidates": [
+          {
+            "raw_value": "6205-2RSH",
+            "normalized_value": "6205-2RSH",
+            "unit": null,
+            "evidence": {
+              "source_name": "SKF_Rolling_Bearings_6205.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 1,
+              "snippet": "Designation: 6205-2RSH Deep groove ball bearings, single row",
+              "extraction_confidence": 0.99
+            }
+          },
+          {
+            "raw_value": "6205-2RSH",
+            "normalized_value": "6205-2RSH",
+            "unit": null,
+            "evidence": {
+              "source_name": "sample_products.csv",
+              "source_type": "csv",
+              "page": null,
+              "snippet": "6205-2RSH,Deep Groove Ball Bearing 6205,Ball Bearings...",
+              "extraction_confidence": 0.95
+            }
+          }
+        ],
+        "validation_notes": ["Matches standard ISO bearing designation format"],
+        "decision_reason": "Exact match across Manufacturer Datasheet and Catalog CSV."
+      },
+      "product_name": {
+        "field": "product_name",
+        "final_value": "Deep Groove Ball Bearing 6205-2RSH",
+        "status": "validated",
+        "confidence": 0.95,
+        "candidates": [
+          {
+            "raw_value": "Deep groove ball bearings, single row",
+            "normalized_value": "Deep Groove Ball Bearing 6205-2RSH",
+            "unit": null,
+            "evidence": {
+              "source_name": "SKF_Rolling_Bearings_6205.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 1,
+              "snippet": "SKF Explorer Deep groove ball bearings, single row 6205-2RSH",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Canonical product title generated from manufacturer datasheet specifications."
+      },
+      "category": {
+        "field": "category",
+        "final_value": "Bearings",
+        "status": "validated",
+        "confidence": 0.96,
+        "candidates": [
+          {
+            "raw_value": "Ball Bearings",
+            "normalized_value": "Bearings",
+            "unit": null,
+            "evidence": {
+              "source_name": "sample_products.csv",
+              "source_type": "csv",
+              "page": null,
+              "snippet": "Category: Ball Bearings",
+              "extraction_confidence": 0.92
+            }
+          }
+        ],
+        "validation_notes": ["Normalized to UNSPSC / PIM category taxonomy"],
+        "decision_reason": "Mapped taxonomy synonym 'Ball Bearings' to canonical 'Bearings'."
+      },
+      "subcategory": {
+        "field": "subcategory",
+        "final_value": "Deep Groove Ball Bearings",
+        "status": "validated",
+        "confidence": 0.94,
+        "candidates": [
+          {
+            "raw_value": "Deep Groove Ball Bearings",
+            "normalized_value": "Deep Groove Ball Bearings",
+            "unit": null,
+            "evidence": {
+              "source_name": "SKF_Rolling_Bearings_6205.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 1,
+              "snippet": "Product category: Deep groove ball bearings",
+              "extraction_confidence": 0.95
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Extracted from primary manufacturer datasheet."
+      },
+      "bore_diameter": {
+        "field": "bore_diameter",
+        "final_value": 25.0,
+        "status": "validated",
+        "confidence": 0.96,
+        "candidates": [
+          {
+            "raw_value": "25 mm",
+            "normalized_value": 25.0,
+            "unit": "millimeter",
+            "evidence": {
+              "source_name": "SKF_Rolling_Bearings_6205.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 2,
+              "snippet": "Principal dimensions: d = 25 mm, D = 52 mm, B = 15 mm",
+              "extraction_confidence": 0.98
+            }
+          },
+          {
+            "raw_value": "25mm",
+            "normalized_value": 25.0,
+            "unit": "millimeter",
+            "evidence": {
+              "source_name": "sample_products.csv",
+              "source_type": "csv",
+              "page": null,
+              "snippet": "bore_diameter: 25 mm",
+              "extraction_confidence": 0.95
+            }
+          }
+        ],
+        "validation_notes": ["Value 25.0 mm within expected bearing range [1, 1000] mm"],
+        "decision_reason": "Both sources agree on 25.0 mm; verified with manufacturer datasheet citation."
+      },
+      "outer_diameter": {
+        "field": "outer_diameter",
+        "final_value": 52.0,
+        "status": "validated",
+        "confidence": 0.96,
+        "candidates": [
+          {
+            "raw_value": "52 mm",
+            "normalized_value": 52.0,
+            "unit": "millimeter",
+            "evidence": {
+              "source_name": "SKF_Rolling_Bearings_6205.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 2,
+              "snippet": "Principal dimensions: d = 25 mm, D = 52 mm, B = 15 mm",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": [
+          "Value 52.0 mm within expected bearing range [5, 2000] mm",
+          "Physical law check PASSED: outer diameter (52.0 mm) > bore diameter (25.0 mm)"
+        ],
+        "decision_reason": "Verified from manufacturer datasheet with physical geometry check pass."
+      },
+      "width": {
+        "field": "width",
+        "final_value": 15.0,
+        "status": "validated",
+        "confidence": 0.96,
+        "candidates": [
+          {
+            "raw_value": "15 mm",
+            "normalized_value": 15.0,
+            "unit": "millimeter",
+            "evidence": {
+              "source_name": "SKF_Rolling_Bearings_6205.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 2,
+              "snippet": "B = 15 mm (Width / Thickness)",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": ["Value 15.0 mm within expected range [0.5, 500] mm"],
+        "decision_reason": "Conforms to standard ISO 15 series 02 dimensions."
+      },
+      "weight": {
+        "field": "weight",
+        "final_value": 0.13,
+        "status": "validated",
+        "confidence": 0.94,
+        "candidates": [
+          {
+            "raw_value": "0.13 kg",
+            "normalized_value": 0.13,
+            "unit": "kilogram",
+            "evidence": {
+              "source_name": "SKF_Rolling_Bearings_6205.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 2,
+              "snippet": "Mass: 0.13 kg",
+              "extraction_confidence": 0.96
+            }
+          },
+          {
+            "raw_value": "130 g",
+            "normalized_value": 0.13,
+            "unit": "kilogram",
+            "evidence": {
+              "source_name": "Technical_Catalog_2025.pdf",
+              "source_type": "technical_catalog",
+              "page": 44,
+              "snippet": "Net weight: 130 grams per unit",
+              "extraction_confidence": 0.92
+            }
+          }
+        ],
+        "validation_notes": ["Pint normalized 130 g -> 0.13 kg", "Value within range [0.005, 200] kg"],
+        "decision_reason": "Datasheet and Catalog agree after automated Pint unit canonicalization (130g == 0.13kg)."
+      },
+      "dynamic_load_rating": {
+        "field": "dynamic_load_rating",
+        "final_value": 14.8,
+        "status": "validated",
+        "confidence": 0.95,
+        "candidates": [
+          {
+            "raw_value": "14.8 kN",
+            "normalized_value": 14.8,
+            "unit": "kilonewton",
+            "evidence": {
+              "source_name": "SKF_Rolling_Bearings_6205.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 3,
+              "snippet": "Basic dynamic load rating C = 14.8 kN",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": [
+          "Dynamic load (14.8 kN) > Static load (7.8 kN) check PASSED",
+          "Value within expected range [0.1, 5000] kN"
+        ],
+        "decision_reason": "Verified with manufacturer datasheet dynamic load rating C."
+      },
+      "static_load_rating": {
+        "field": "static_load_rating",
+        "final_value": 7.8,
+        "status": "validated",
+        "confidence": 0.95,
+        "candidates": [
+          {
+            "raw_value": "7.8 kN",
+            "normalized_value": 7.8,
+            "unit": "kilonewton",
+            "evidence": {
+              "source_name": "SKF_Rolling_Bearings_6205.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 3,
+              "snippet": "Basic static load rating C0 = 7.8 kN",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": ["Value within expected range [0.1, 5000] kN"],
+        "decision_reason": "Verified with manufacturer datasheet static load rating C0."
+      },
+      "limiting_speed": {
+        "field": "limiting_speed",
+        "final_value": 8500.0,
+        "status": "validated",
+        "confidence": 0.93,
+        "candidates": [
+          {
+            "raw_value": "8500 r/min",
+            "normalized_value": 8500.0,
+            "unit": "rpm",
+            "evidence": {
+              "source_name": "SKF_Rolling_Bearings_6205.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 3,
+              "snippet": "Limiting speed with contact seals: 8500 r/min",
+              "extraction_confidence": 0.95
+            }
+          }
+        ],
+        "validation_notes": ["Speed limit complies with pitch velocity index n*dm < 350,000"],
+        "decision_reason": "Extracted from sealed operational speed rating table in primary datasheet."
+      },
+      "material": {
+        "field": "material",
+        "final_value": "Chrome Steel",
+        "status": "validated",
+        "confidence": 0.92,
+        "candidates": [
+          {
+            "raw_value": "AISI 52100 high carbon chrome bearing steel",
+            "normalized_value": "Chrome Steel",
+            "unit": null,
+            "evidence": {
+              "source_name": "SKF_Rolling_Bearings_6205.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 4,
+              "snippet": "Ring and ball material: AISI 52100 vacuum degassed bearing steel",
+              "extraction_confidence": 0.96
+            }
+          }
+        ],
+        "validation_notes": ["Mapped AISI 52100 -> Chrome Steel"],
+        "decision_reason": "Canonicalized metallurgical designation to standardized trade material."
+      },
+      "applications": {
+        "field": "applications",
+        "final_value": "Electric Motors, Pumps, Gearboxes, Industrial Conveyors",
+        "status": "validated",
+        "confidence": 0.88,
+        "candidates": [
+          {
+            "raw_value": "Electric motors, pumps, transmissions, agricultural machinery",
+            "normalized_value": "Electric Motors, Pumps, Gearboxes, Industrial Conveyors",
+            "unit": null,
+            "evidence": {
+              "source_name": "SKF_Rolling_Bearings_6205.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 1,
+              "snippet": "Typical applications include electric motors, centrifugal pumps, and industrial gearboxes.",
+              "extraction_confidence": 0.9
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "AI enriched application tags from manufacturer technical specifications."
+      },
+      "standards": {
+        "field": "standards",
+        "final_value": "ISO 15, DIN 625",
+        "status": "validated",
+        "confidence": 0.95,
+        "candidates": [
+          {
+            "raw_value": "ISO 15:2017 / DIN 625-1",
+            "normalized_value": "ISO 15, DIN 625",
+            "unit": null,
+            "evidence": {
+              "source_name": "SKF_Rolling_Bearings_6205.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 4,
+              "snippet": "Boundary dimensions conform to ISO 15 and DIN 625-1.",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Standards verified against international bearing dimension codes."
+      }
+    }
+  },
+  {
+    "sku": "6000-ZZ",
+    "product_name": "Shielded Deep Groove Ball Bearing 6000-ZZ",
+    "overall_confidence": 0.91,
+    "overall_status": "validated",
+    "fields": {
+      "sku": {
+        "field": "sku",
+        "final_value": "6000-ZZ",
+        "status": "validated",
+        "confidence": 0.97,
+        "candidates": [
+          {
+            "raw_value": "6000-ZZ",
+            "normalized_value": "6000-ZZ",
+            "unit": null,
+            "evidence": {
+              "source_name": "NSK_Miniature_and_Small_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 12,
+              "snippet": "Bearing No. 6000ZZ with metal shields on both sides",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Standard small bore ball bearing designation."
+      },
+      "product_name": {
+        "field": "product_name",
+        "final_value": "Shielded Deep Groove Ball Bearing 6000-ZZ",
+        "status": "validated",
+        "confidence": 0.95,
+        "candidates": [
+          {
+            "raw_value": "Single Row Deep Groove Ball Bearing Metal Shielded",
+            "normalized_value": "Shielded Deep Groove Ball Bearing 6000-ZZ",
+            "unit": null,
+            "evidence": {
+              "source_name": "NSK_Miniature_and_Small_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 12,
+              "snippet": "NSK Deep Groove Ball Bearings Shielded Type 6000ZZ",
+              "extraction_confidence": 0.95
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Synthesized canonical title from NSK engineering datasheet."
+      },
+      "category": {
+        "field": "category",
+        "final_value": "Bearings",
+        "status": "validated",
+        "confidence": 0.95,
+        "candidates": [
+          {
+            "raw_value": "Bearings",
+            "normalized_value": "Bearings",
+            "unit": null,
+            "evidence": {
+              "source_name": "sample_products.csv",
+              "source_type": "csv",
+              "page": null,
+              "snippet": "Category: Bearings",
+              "extraction_confidence": 0.95
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Standard catalog category."
+      },
+      "subcategory": {
+        "field": "subcategory",
+        "final_value": "Deep Groove Ball Bearings",
+        "status": "validated",
+        "confidence": 0.93,
+        "candidates": [
+          {
+            "raw_value": "Deep Groove Ball Bearings",
+            "normalized_value": "Deep Groove Ball Bearings",
+            "unit": null,
+            "evidence": {
+              "source_name": "NSK_Miniature_and_Small_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 12,
+              "snippet": "Deep Groove Ball Bearings - Shielded",
+              "extraction_confidence": 0.94
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Extracted from manufacturer catalog structure."
+      },
+      "bore_diameter": {
+        "field": "bore_diameter",
+        "final_value": 10.0,
+        "status": "validated",
+        "confidence": 0.96,
+        "candidates": [
+          {
+            "raw_value": "10 mm",
+            "normalized_value": 10.0,
+            "unit": "millimeter",
+            "evidence": {
+              "source_name": "NSK_Miniature_and_Small_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 12,
+              "snippet": "Bore diameter d = 10 mm",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": ["Within standard range [1, 1000] mm"],
+        "decision_reason": "Confirmed 10mm bore diameter from NSK dimensional tables."
+      },
+      "outer_diameter": {
+        "field": "outer_diameter",
+        "final_value": 26.0,
+        "status": "validated",
+        "confidence": 0.96,
+        "candidates": [
+          {
+            "raw_value": "26 mm",
+            "normalized_value": 26.0,
+            "unit": "millimeter",
+            "evidence": {
+              "source_name": "NSK_Miniature_and_Small_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 12,
+              "snippet": "Outside diameter D = 26 mm",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": ["Physical check PASSED: outer (26.0) > bore (10.0)"],
+        "decision_reason": "Validated against geometric consistency rules."
+      },
+      "width": {
+        "field": "width",
+        "final_value": 8.0,
+        "status": "validated",
+        "confidence": 0.96,
+        "candidates": [
+          {
+            "raw_value": "8 mm",
+            "normalized_value": 8.0,
+            "unit": "millimeter",
+            "evidence": {
+              "source_name": "NSK_Miniature_and_Small_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 12,
+              "snippet": "Width B = 8 mm",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Boundary dimension width matches ISO 15 series 00 standard."
+      },
+      "weight": {
+        "field": "weight",
+        "final_value": 0.019,
+        "status": "validated",
+        "confidence": 0.91,
+        "candidates": [
+          {
+            "raw_value": "19 g",
+            "normalized_value": 0.019,
+            "unit": "kilogram",
+            "evidence": {
+              "source_name": "NSK_Miniature_and_Small_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 12,
+              "snippet": "Mass (approx.) = 19 g",
+              "extraction_confidence": 0.95
+            }
+          }
+        ],
+        "validation_notes": ["Pint conversion 19g -> 0.019kg"],
+        "decision_reason": "Automatically converted from grams to canonical kilograms."
+      },
+      "dynamic_load_rating": {
+        "field": "dynamic_load_rating",
+        "final_value": 4.75,
+        "status": "validated",
+        "confidence": 0.94,
+        "candidates": [
+          {
+            "raw_value": "4750 N",
+            "normalized_value": 4.75,
+            "unit": "kilonewton",
+            "evidence": {
+              "source_name": "NSK_Miniature_and_Small_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 12,
+              "snippet": "Basic load ratings Cr = 4,750 N",
+              "extraction_confidence": 0.97
+            }
+          }
+        ],
+        "validation_notes": ["Pint normalized 4750 N -> 4.75 kN", "Dynamic (4.75 kN) >= Static (1.96 kN) check PASSED"],
+        "decision_reason": "Pint unit conversion from Newtons to canonical kilonewtons."
+      },
+      "static_load_rating": {
+        "field": "static_load_rating",
+        "final_value": 1.96,
+        "status": "validated",
+        "confidence": 0.94,
+        "candidates": [
+          {
+            "raw_value": "1960 N",
+            "normalized_value": 1.96,
+            "unit": "kilonewton",
+            "evidence": {
+              "source_name": "NSK_Miniature_and_Small_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 12,
+              "snippet": "Basic load ratings Cor = 1,960 N",
+              "extraction_confidence": 0.97
+            }
+          }
+        ],
+        "validation_notes": ["Pint normalized 1960 N -> 1.96 kN"],
+        "decision_reason": "Static rating normalized to kN."
+      },
+      "limiting_speed": {
+        "field": "limiting_speed",
+        "final_value": 22000.0,
+        "status": "validated",
+        "confidence": 0.92,
+        "candidates": [
+          {
+            "raw_value": "22000 rpm",
+            "normalized_value": 22000.0,
+            "unit": "rpm",
+            "evidence": {
+              "source_name": "NSK_Miniature_and_Small_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 12,
+              "snippet": "Limiting speeds: Grease lubrication = 22,000 rpm",
+              "extraction_confidence": 0.94
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Speed rating extracted from grease lubrication limit."
+      },
+      "material": {
+        "field": "material",
+        "final_value": "Chrome Steel",
+        "status": "validated",
+        "confidence": 0.93,
+        "candidates": [
+          {
+            "raw_value": "High Carbon Chromium Bearing Steel",
+            "normalized_value": "Chrome Steel",
+            "unit": null,
+            "evidence": {
+              "source_name": "NSK_Miniature_and_Small_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 5,
+              "snippet": "Standard material for rings and rolling elements is SUJ2 high carbon chromium bearing steel.",
+              "extraction_confidence": 0.96
+            }
+          }
+        ],
+        "validation_notes": ["Mapped SUJ2 -> Chrome Steel"],
+        "decision_reason": "JIS SUJ2 steel canonicalized to industry standard Chrome Steel."
+      },
+      "applications": {
+        "field": "applications",
+        "final_value": "Small Power Tools, Fans, Stepper Motors, Precision Instruments",
+        "status": "validated",
+        "confidence": 0.89,
+        "candidates": [
+          {
+            "raw_value": "Fractional horsepower motors, office equipment, measuring devices",
+            "normalized_value": "Small Power Tools, Fans, Stepper Motors, Precision Instruments",
+            "unit": null,
+            "evidence": {
+              "source_name": "NSK_Miniature_and_Small_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 2,
+              "snippet": "Suitable for fractional horsepower motors, dental drills, and office automation.",
+              "extraction_confidence": 0.9
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "AI enriched application scope from technical catalog."
+      },
+      "standards": {
+        "field": "standards",
+        "final_value": "ISO 15, JIS B 1512",
+        "status": "validated",
+        "confidence": 0.94,
+        "candidates": [
+          {
+            "raw_value": "ISO 15 / JIS B 1512",
+            "normalized_value": "ISO 15, JIS B 1512",
+            "unit": null,
+            "evidence": {
+              "source_name": "NSK_Miniature_and_Small_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 5,
+              "snippet": "Boundary dimensions conform to JIS B 1512 and ISO 15.",
+              "extraction_confidence": 0.96
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Conforms to international standard series."
+      }
+    }
+  },
+  {
+    "sku": "6308-2RS",
+    "product_name": "High Capacity Deep Groove Ball Bearing 6308-2RS",
+    "overall_confidence": 0.88,
+    "overall_status": "conflict_resolved",
+    "fields": {
+      "sku": {
+        "field": "sku",
+        "final_value": "6308-2RS",
+        "status": "validated",
+        "confidence": 0.98,
+        "candidates": [
+          {
+            "raw_value": "6308-2RS",
+            "normalized_value": "6308-2RS",
+            "unit": null,
+            "evidence": {
+              "source_name": "FAG_Ball_Bearings_Catalog.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 88,
+              "snippet": "FAG 6308-2RSR Deep Groove Ball Bearings with lip seals",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Verified from manufacturer catalog."
+      },
+      "product_name": {
+        "field": "product_name",
+        "final_value": "High Capacity Deep Groove Ball Bearing 6308-2RS",
+        "status": "validated",
+        "confidence": 0.92,
+        "candidates": [
+          {
+            "raw_value": "High Capacity Deep Groove Ball Bearing",
+            "normalized_value": "High Capacity Deep Groove Ball Bearing 6308-2RS",
+            "unit": null,
+            "evidence": {
+              "source_name": "sample_products.csv",
+              "source_type": "csv",
+              "page": null,
+              "snippet": "product_name: High Capacity Deep Groove Ball Bearing",
+              "extraction_confidence": 0.9
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Clean product name enriched with SKU suffix."
+      },
+      "category": {
+        "field": "category",
+        "final_value": "Bearings",
+        "status": "validated",
+        "confidence": 0.95,
+        "candidates": [
+          {
+            "raw_value": "Radial Bearings",
+            "normalized_value": "Bearings",
+            "unit": null,
+            "evidence": {
+              "source_name": "sample_products.csv",
+              "source_type": "csv",
+              "page": null,
+              "snippet": "category: Radial Bearings",
+              "extraction_confidence": 0.93
+            }
+          }
+        ],
+        "validation_notes": ["Mapped Radial Bearings -> Bearings"],
+        "decision_reason": "Taxonomy normalization."
+      },
+      "subcategory": {
+        "field": "subcategory",
+        "final_value": "Deep Groove Ball Bearings",
+        "status": "validated",
+        "confidence": 0.93,
+        "candidates": [
+          {
+            "raw_value": "Deep Groove Ball Bearings",
+            "normalized_value": "Deep Groove Ball Bearings",
+            "unit": null,
+            "evidence": {
+              "source_name": "FAG_Ball_Bearings_Catalog.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 88,
+              "snippet": "Category: Deep Groove Ball Bearings Series 63",
+              "extraction_confidence": 0.95
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Manufacturer series identification."
+      },
+      "bore_diameter": {
+        "field": "bore_diameter",
+        "final_value": 40.0,
+        "status": "validated",
+        "confidence": 0.97,
+        "candidates": [
+          {
+            "raw_value": "40 mm",
+            "normalized_value": 40.0,
+            "unit": "millimeter",
+            "evidence": {
+              "source_name": "FAG_Ball_Bearings_Catalog.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 88,
+              "snippet": "d = 40 mm",
+              "extraction_confidence": 0.99
+            }
+          }
+        ],
+        "validation_notes": ["Value within range [1, 1000] mm"],
+        "decision_reason": "Standard series 08 bore (40mm = 08 * 5)."
+      },
+      "outer_diameter": {
+        "field": "outer_diameter",
+        "final_value": 90.0,
+        "status": "validated",
+        "confidence": 0.97,
+        "candidates": [
+          {
+            "raw_value": "90 mm",
+            "normalized_value": 90.0,
+            "unit": "millimeter",
+            "evidence": {
+              "source_name": "FAG_Ball_Bearings_Catalog.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 88,
+              "snippet": "D = 90 mm",
+              "extraction_confidence": 0.99
+            }
+          }
+        ],
+        "validation_notes": ["Check PASSED: outer (90.0) > bore (40.0)"],
+        "decision_reason": "Standard ISO 15 series 03 outer diameter."
+      },
+      "width": {
+        "field": "width",
+        "final_value": 23.0,
+        "status": "validated",
+        "confidence": 0.97,
+        "candidates": [
+          {
+            "raw_value": "23 mm",
+            "normalized_value": 23.0,
+            "unit": "millimeter",
+            "evidence": {
+              "source_name": "FAG_Ball_Bearings_Catalog.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 88,
+              "snippet": "B = 23 mm",
+              "extraction_confidence": 0.99
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Standard ISO width specification."
+      },
+      "weight": {
+        "field": "weight",
+        "final_value": 0.64,
+        "status": "conflict_resolved",
+        "confidence": 0.89,
+        "candidates": [
+          {
+            "raw_value": "0.64 kg",
+            "normalized_value": 0.64,
+            "unit": "kilogram",
+            "evidence": {
+              "source_name": "FAG_Ball_Bearings_Catalog.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 88,
+              "snippet": "Weight m = 0.64 kg",
+              "extraction_confidence": 0.97
+            }
+          },
+          {
+            "raw_value": "0.85 kg",
+            "normalized_value": 0.85,
+            "unit": "kilogram",
+            "evidence": {
+              "source_name": "Legacy_ERP_Export.csv",
+              "source_type": "erp_export",
+              "page": null,
+              "snippet": "SKU: 6308-2RS, Shipping_Weight: 0.85 kg",
+              "extraction_confidence": 0.85
+            }
+          }
+        ],
+        "validation_notes": [
+          "Divergence detected: 0.64 kg vs 0.85 kg (Legacy ERP included packaging gross weight)"
+        ],
+        "decision_reason": "Resolved in favor of Manufacturer Datasheet (0.64 kg net weight, authority 1.0) over Legacy ERP (0.85 kg gross shipping weight, authority 0.6)."
+      },
+      "dynamic_load_rating": {
+        "field": "dynamic_load_rating",
+        "final_value": 42.5,
+        "status": "validated",
+        "confidence": 0.96,
+        "candidates": [
+          {
+            "raw_value": "42.5 kN",
+            "normalized_value": 42.5,
+            "unit": "kilonewton",
+            "evidence": {
+              "source_name": "FAG_Ball_Bearings_Catalog.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 89,
+              "snippet": "Dynamic load rating Cr = 42.5 kN",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": ["Dynamic load (42.5 kN) > Static load (24.0 kN) check PASSED"],
+        "decision_reason": "High load capacity confirmed from FAG engineering tables."
+      },
+      "static_load_rating": {
+        "field": "static_load_rating",
+        "final_value": 24.0,
+        "status": "validated",
+        "confidence": 0.96,
+        "candidates": [
+          {
+            "raw_value": "24.0 kN",
+            "normalized_value": 24.0,
+            "unit": "kilonewton",
+            "evidence": {
+              "source_name": "FAG_Ball_Bearings_Catalog.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 89,
+              "snippet": "Static load rating C0r = 24.0 kN",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Static load rating verified."
+      },
+      "limiting_speed": {
+        "field": "limiting_speed",
+        "final_value": 5300.0,
+        "status": "validated",
+        "confidence": 0.92,
+        "candidates": [
+          {
+            "raw_value": "5300 rpm",
+            "normalized_value": 5300.0,
+            "unit": "rpm",
+            "evidence": {
+              "source_name": "FAG_Ball_Bearings_Catalog.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 89,
+              "snippet": "Limiting speed with contact seals nG = 5,300 1/min",
+              "extraction_confidence": 0.95
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Contact seal maximum speed threshold."
+      },
+      "material": {
+        "field": "material",
+        "final_value": "Chrome Steel",
+        "status": "validated",
+        "confidence": 0.94,
+        "candidates": [
+          {
+            "raw_value": "100Cr6",
+            "normalized_value": "Chrome Steel",
+            "unit": null,
+            "evidence": {
+              "source_name": "FAG_Ball_Bearings_Catalog.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 90,
+              "snippet": "Material: Premium through-hardened 100Cr6 bearing steel",
+              "extraction_confidence": 0.97
+            }
+          }
+        ],
+        "validation_notes": ["Mapped DIN 100Cr6 (1.3505) -> Chrome Steel"],
+        "decision_reason": "European DIN material standard canonicalized to Chrome Steel."
+      },
+      "applications": {
+        "field": "applications",
+        "final_value": "Heavy Industrial Gearboxes, Mining Equipment, High Load Pumps",
+        "status": "validated",
+        "confidence": 0.88,
+        "candidates": [
+          {
+            "raw_value": "Heavy machinery, large electric motors, mining pulleys",
+            "normalized_value": "Heavy Industrial Gearboxes, Mining Equipment, High Load Pumps",
+            "unit": null,
+            "evidence": {
+              "source_name": "FAG_Ball_Bearings_Catalog.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 88,
+              "snippet": "Designed for high radial loads in gearboxes, heavy processing equipment, and pumps.",
+              "extraction_confidence": 0.91
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "AI enriched application taxonomy."
+      },
+      "standards": {
+        "field": "standards",
+        "final_value": "DIN 625-1, ISO 15",
+        "status": "validated",
+        "confidence": 0.95,
+        "candidates": [
+          {
+            "raw_value": "DIN 625-1",
+            "normalized_value": "DIN 625-1, ISO 15",
+            "unit": null,
+            "evidence": {
+              "source_name": "FAG_Ball_Bearings_Catalog.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 88,
+              "snippet": "Specification conforms to DIN 625 Teil 1.",
+              "extraction_confidence": 0.97
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Conforms to German and International dimensional standards."
+      }
+    }
+  },
+  {
+    "sku": "32005-X",
+    "product_name": "Tapered Roller Bearing Single Row 32005X",
+    "overall_confidence": 0.82,
+    "overall_status": "needs_review",
+    "fields": {
+      "sku": {
+        "field": "sku",
+        "final_value": "32005-X",
+        "status": "validated",
+        "confidence": 0.97,
+        "candidates": [
+          {
+            "raw_value": "32005X",
+            "normalized_value": "32005-X",
+            "unit": null,
+            "evidence": {
+              "source_name": "Timken_Tapered_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 210,
+              "snippet": "Part Number: 32005X (Metric Single-Row Tapered Roller Bearing)",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Standard metric tapered roller bearing part number."
+      },
+      "product_name": {
+        "field": "product_name",
+        "final_value": "Tapered Roller Bearing Single Row 32005X",
+        "status": "validated",
+        "confidence": 0.94,
+        "candidates": [
+          {
+            "raw_value": "Metric Single-Row Tapered Roller Bearing 32005X",
+            "normalized_value": "Tapered Roller Bearing Single Row 32005X",
+            "unit": null,
+            "evidence": {
+              "source_name": "Timken_Tapered_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 210,
+              "snippet": "Timken Metric Tapered Roller Bearing Cone and Cup Assembly 32005X",
+              "extraction_confidence": 0.96
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Extracted from Timken engineering catalog."
+      },
+      "category": {
+        "field": "category",
+        "final_value": "Bearings",
+        "status": "validated",
+        "confidence": 0.95,
+        "candidates": [
+          {
+            "raw_value": "Roller Bearings",
+            "normalized_value": "Bearings",
+            "unit": null,
+            "evidence": {
+              "source_name": "sample_products.csv",
+              "source_type": "csv",
+              "page": null,
+              "snippet": "category: Roller Bearings",
+              "extraction_confidence": 0.92
+            }
+          }
+        ],
+        "validation_notes": ["Mapped Roller Bearings -> Bearings"],
+        "decision_reason": "Taxonomy standard mapping."
+      },
+      "subcategory": {
+        "field": "subcategory",
+        "final_value": "Tapered Roller Bearings",
+        "status": "validated",
+        "confidence": 0.95,
+        "candidates": [
+          {
+            "raw_value": "Tapered Roller Bearings",
+            "normalized_value": "Tapered Roller Bearings",
+            "unit": null,
+            "evidence": {
+              "source_name": "Timken_Tapered_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 210,
+              "snippet": "Tapered Roller Bearings - Metric Series",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Identified tapered roller geometry subtype."
+      },
+      "bore_diameter": {
+        "field": "bore_diameter",
+        "final_value": 25.0,
+        "status": "validated",
+        "confidence": 0.96,
+        "candidates": [
+          {
+            "raw_value": "25 mm",
+            "normalized_value": 25.0,
+            "unit": "millimeter",
+            "evidence": {
+              "source_name": "Timken_Tapered_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 210,
+              "snippet": "d (Cone Bore) = 25.000 mm [0.9843 in]",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": ["Value within range [1, 1000] mm"],
+        "decision_reason": "Cone inner bore diameter verified in metric and imperial."
+      },
+      "outer_diameter": {
+        "field": "outer_diameter",
+        "final_value": 47.0,
+        "status": "validated",
+        "confidence": 0.96,
+        "candidates": [
+          {
+            "raw_value": "47 mm",
+            "normalized_value": 47.0,
+            "unit": "millimeter",
+            "evidence": {
+              "source_name": "Timken_Tapered_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 210,
+              "snippet": "D (Cup Outer Diameter) = 47.000 mm [1.8504 in]",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": ["Check PASSED: outer (47.0) > bore (25.0)"],
+        "decision_reason": "Cup outside diameter verified."
+      },
+      "width": {
+        "field": "width",
+        "final_value": 15.0,
+        "status": "validated",
+        "confidence": 0.96,
+        "candidates": [
+          {
+            "raw_value": "15 mm",
+            "normalized_value": 15.0,
+            "unit": "millimeter",
+            "evidence": {
+              "source_name": "Timken_Tapered_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 210,
+              "snippet": "T (Total Assembly Width) = 15.000 mm [0.5906 in]",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Total assembled cone+cup width."
+      },
+      "weight": {
+        "field": "weight",
+        "final_value": 0.12,
+        "status": "validated",
+        "confidence": 0.92,
+        "candidates": [
+          {
+            "raw_value": "0.12 kg",
+            "normalized_value": 0.12,
+            "unit": "kilogram",
+            "evidence": {
+              "source_name": "Timken_Tapered_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 210,
+              "snippet": "Weight = 0.12 kg (0.26 lb)",
+              "extraction_confidence": 0.95
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Assembled weight."
+      },
+      "dynamic_load_rating": {
+        "field": "dynamic_load_rating",
+        "final_value": 28.5,
+        "status": "needs_review",
+        "confidence": 0.68,
+        "candidates": [
+          {
+            "raw_value": "28.5 kN",
+            "normalized_value": 28.5,
+            "unit": "kilonewton",
+            "evidence": {
+              "source_name": "Timken_Tapered_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 210,
+              "snippet": "C90 (Single-row rating for 90 million revs) = 28.5 kN",
+              "extraction_confidence": 0.85
+            }
+          },
+          {
+            "raw_value": "35.2 kN",
+            "normalized_value": 35.2,
+            "unit": "kilonewton",
+            "evidence": {
+              "source_name": "ISO_355_Comparison_Table.pdf",
+              "source_type": "technical_catalog",
+              "page": 14,
+              "snippet": "ISO Basic Dynamic Load Rating C1 (1 million revs) = 35.2 kN",
+              "extraction_confidence": 0.82
+            }
+          }
+        ],
+        "validation_notes": [
+          "Rating standard discrepancy: Timken C90 (90M revolutions) vs ISO C1 (1M revolutions)",
+          "Dynamic (28.5 kN) < Static (32.5 kN) flag: Tapered roller bearings frequently have higher static load capacity, but rating standard requires engineer confirmation"
+        ],
+        "decision_reason": "Conflicting rating standards (Timken C90 vs ISO C1). Routed to Review Queue for human engineering verification."
+      },
+      "static_load_rating": {
+        "field": "static_load_rating",
+        "final_value": 32.5,
+        "status": "validated",
+        "confidence": 0.94,
+        "candidates": [
+          {
+            "raw_value": "32.5 kN",
+            "normalized_value": 32.5,
+            "unit": "kilonewton",
+            "evidence": {
+              "source_name": "Timken_Tapered_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 210,
+              "snippet": "C0 (Static Radial Rating) = 32.5 kN [7,300 lbf]",
+              "extraction_confidence": 0.96
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Static radial load capacity."
+      },
+      "limiting_speed": {
+        "field": "limiting_speed",
+        "final_value": 7500.0,
+        "status": "validated",
+        "confidence": 0.91,
+        "candidates": [
+          {
+            "raw_value": "7500 rpm",
+            "normalized_value": 7500.0,
+            "unit": "rpm",
+            "evidence": {
+              "source_name": "Timken_Tapered_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 210,
+              "snippet": "Thermal Reference Speed (Oil) = 7500 rpm",
+              "extraction_confidence": 0.93
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Thermal reference speed in oil lubrication."
+      },
+      "material": {
+        "field": "material",
+        "final_value": "Case Carburized Alloy Steel",
+        "status": "validated",
+        "confidence": 0.94,
+        "candidates": [
+          {
+            "raw_value": "Case-hardened alloy steel",
+            "normalized_value": "Case Carburized Alloy Steel",
+            "unit": null,
+            "evidence": {
+              "source_name": "Timken_Tapered_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 8,
+              "snippet": "Timken proprietary case-carburized steel provides superior fatigue resistance.",
+              "extraction_confidence": 0.97
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Timken case-carburized alloy steel specification."
+      },
+      "applications": {
+        "field": "applications",
+        "final_value": "Automotive Wheel Hubs, Heavy Gear Drives, Agricultural Axles",
+        "status": "validated",
+        "confidence": 0.88,
+        "candidates": [
+          {
+            "raw_value": "Automotive wheel ends, differentials, industrial gear reducers",
+            "normalized_value": "Automotive Wheel Hubs, Heavy Gear Drives, Agricultural Axles",
+            "unit": null,
+            "evidence": {
+              "source_name": "Timken_Tapered_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 1,
+              "snippet": "Primary applications: automotive front and rear axles, off-highway wheel ends, reduction gearboxes.",
+              "extraction_confidence": 0.9
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "AI enriched application classifications."
+      },
+      "standards": {
+        "field": "standards",
+        "final_value": "ISO 355",
+        "status": "validated",
+        "confidence": 0.96,
+        "candidates": [
+          {
+            "raw_value": "ISO 355",
+            "normalized_value": "ISO 355",
+            "unit": null,
+            "evidence": {
+              "source_name": "Timken_Tapered_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 210,
+              "snippet": "Metric dimensions conform to ISO 355 specification.",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "ISO 355 standard compliance."
+      }
+    }
+  },
+  {
+    "sku": "6204-OPEN",
+    "product_name": "Open Type Deep Groove Ball Bearing 6204",
+    "overall_confidence": 0.93,
+    "overall_status": "validated",
+    "fields": {
+      "sku": {
+        "field": "sku",
+        "final_value": "6204-OPEN",
+        "status": "validated",
+        "confidence": 0.98,
+        "candidates": [
+          {
+            "raw_value": "6204",
+            "normalized_value": "6204-OPEN",
+            "unit": null,
+            "evidence": {
+              "source_name": "NTN_Ball_and_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 54,
+              "snippet": "Deep Groove Ball Bearings Open Type 6204",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Canonicalized model number with open enclosure suffix."
+      },
+      "product_name": {
+        "field": "product_name",
+        "final_value": "Open Type Deep Groove Ball Bearing 6204",
+        "status": "validated",
+        "confidence": 0.94,
+        "candidates": [
+          {
+            "raw_value": "Open Type Deep Groove Ball Bearing",
+            "normalized_value": "Open Type Deep Groove Ball Bearing 6204",
+            "unit": null,
+            "evidence": {
+              "source_name": "NTN_Ball_and_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 54,
+              "snippet": "NTN Single Row Radial Ball Bearing Open Type",
+              "extraction_confidence": 0.95
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Title standardized."
+      },
+      "category": {
+        "field": "category",
+        "final_value": "Bearings",
+        "status": "validated",
+        "confidence": 0.95,
+        "candidates": [
+          {
+            "raw_value": "bearing",
+            "normalized_value": "Bearings",
+            "unit": null,
+            "evidence": {
+              "source_name": "sample_products.csv",
+              "source_type": "csv",
+              "page": null,
+              "snippet": "category: bearing",
+              "extraction_confidence": 0.9
+            }
+          }
+        ],
+        "validation_notes": ["Normalized 'bearing' -> 'Bearings'"],
+        "decision_reason": "Standardized category."
+      },
+      "subcategory": {
+        "field": "subcategory",
+        "final_value": "Deep Groove Ball Bearings",
+        "status": "validated",
+        "confidence": 0.94,
+        "candidates": [
+          {
+            "raw_value": "Deep Groove Ball Bearings",
+            "normalized_value": "Deep Groove Ball Bearings",
+            "unit": null,
+            "evidence": {
+              "source_name": "NTN_Ball_and_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 54,
+              "snippet": "Deep Groove Ball Bearings",
+              "extraction_confidence": 0.95
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Subcategory assigned."
+      },
+      "bore_diameter": {
+        "field": "bore_diameter",
+        "final_value": 20.0,
+        "status": "validated",
+        "confidence": 0.97,
+        "candidates": [
+          {
+            "raw_value": "20 mm",
+            "normalized_value": 20.0,
+            "unit": "millimeter",
+            "evidence": {
+              "source_name": "NTN_Ball_and_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 54,
+              "snippet": "d = 20 mm",
+              "extraction_confidence": 0.99
+            }
+          }
+        ],
+        "validation_notes": ["Value within range [1, 1000] mm"],
+        "decision_reason": "Standard series 04 bore (20mm)."
+      },
+      "outer_diameter": {
+        "field": "outer_diameter",
+        "final_value": 47.0,
+        "status": "validated",
+        "confidence": 0.97,
+        "candidates": [
+          {
+            "raw_value": "47 mm",
+            "normalized_value": 47.0,
+            "unit": "millimeter",
+            "evidence": {
+              "source_name": "NTN_Ball_and_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 54,
+              "snippet": "D = 47 mm",
+              "extraction_confidence": 0.99
+            }
+          }
+        ],
+        "validation_notes": ["Physical check PASSED: outer (47.0) > bore (20.0)"],
+        "decision_reason": "Outer diameter verified."
+      },
+      "width": {
+        "field": "width",
+        "final_value": 14.0,
+        "status": "validated",
+        "confidence": 0.97,
+        "candidates": [
+          {
+            "raw_value": "14 mm",
+            "normalized_value": 14.0,
+            "unit": "millimeter",
+            "evidence": {
+              "source_name": "NTN_Ball_and_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 54,
+              "snippet": "B = 14 mm",
+              "extraction_confidence": 0.99
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Standard width specification."
+      },
+      "weight": {
+        "field": "weight",
+        "final_value": 0.11,
+        "status": "validated",
+        "confidence": 0.93,
+        "candidates": [
+          {
+            "raw_value": "0.11 kg",
+            "normalized_value": 0.11,
+            "unit": "kilogram",
+            "evidence": {
+              "source_name": "NTN_Ball_and_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 54,
+              "snippet": "Mass = 0.11 kg",
+              "extraction_confidence": 0.96
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Net mass."
+      },
+      "dynamic_load_rating": {
+        "field": "dynamic_load_rating",
+        "final_value": 13.5,
+        "status": "validated",
+        "confidence": 0.95,
+        "candidates": [
+          {
+            "raw_value": "13.5 kN",
+            "normalized_value": 13.5,
+            "unit": "kilonewton",
+            "evidence": {
+              "source_name": "NTN_Ball_and_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 55,
+              "snippet": "Dynamic Cr = 13.5 kN",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": ["Dynamic (13.5) > Static (6.55) check PASSED"],
+        "decision_reason": "Dynamic load capacity."
+      },
+      "static_load_rating": {
+        "field": "static_load_rating",
+        "final_value": 6.55,
+        "status": "validated",
+        "confidence": 0.95,
+        "candidates": [
+          {
+            "raw_value": "6.55 kN",
+            "normalized_value": 6.55,
+            "unit": "kilonewton",
+            "evidence": {
+              "source_name": "NTN_Ball_and_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 55,
+              "snippet": "Static Cor = 6.55 kN",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Static load capacity."
+      },
+      "limiting_speed": {
+        "field": "limiting_speed",
+        "final_value": 18000.0,
+        "status": "validated",
+        "confidence": 0.94,
+        "candidates": [
+          {
+            "raw_value": "18000 rpm",
+            "normalized_value": 18000.0,
+            "unit": "rpm",
+            "evidence": {
+              "source_name": "NTN_Ball_and_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 55,
+              "snippet": "Limiting speed (Oil): 18,000 rpm",
+              "extraction_confidence": 0.96
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "Open bearing high speed oil lubrication threshold."
+      },
+      "material": {
+        "field": "material",
+        "final_value": "Chrome Steel",
+        "status": "validated",
+        "confidence": 0.93,
+        "candidates": [
+          {
+            "raw_value": "bearing steel",
+            "normalized_value": "Chrome Steel",
+            "unit": null,
+            "evidence": {
+              "source_name": "sample_products.csv",
+              "source_type": "csv",
+              "page": null,
+              "snippet": "material: bearing steel",
+              "extraction_confidence": 0.92
+            }
+          }
+        ],
+        "validation_notes": ["Mapped bearing steel -> Chrome Steel"],
+        "decision_reason": "Canonical material."
+      },
+      "applications": {
+        "field": "applications",
+        "final_value": "High Speed Spindles, Centrifugal Blowers, Power Tools",
+        "status": "validated",
+        "confidence": 0.88,
+        "candidates": [
+          {
+            "raw_value": "Spindles, pumps, machine tool transmissions",
+            "normalized_value": "High Speed Spindles, Centrifugal Blowers, Power Tools",
+            "unit": null,
+            "evidence": {
+              "source_name": "NTN_Ball_and_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 54,
+              "snippet": "Suitable for high speed applications with low friction requirements.",
+              "extraction_confidence": 0.9
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "AI enriched application list."
+      },
+      "standards": {
+        "field": "standards",
+        "final_value": "ISO 15",
+        "status": "validated",
+        "confidence": 0.96,
+        "candidates": [
+          {
+            "raw_value": "ISO 15",
+            "normalized_value": "ISO 15",
+            "unit": null,
+            "evidence": {
+              "source_name": "NTN_Ball_and_Roller_Bearings.pdf",
+              "source_type": "manufacturer_datasheet",
+              "page": 54,
+              "snippet": "Conforms to ISO 15 general plan.",
+              "extraction_confidence": 0.98
+            }
+          }
+        ],
+        "validation_notes": [],
+        "decision_reason": "ISO standard conformity."
+      }
+    }
+  }
+]
