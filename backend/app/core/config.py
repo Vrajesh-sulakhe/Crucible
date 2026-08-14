@@ -14,7 +14,7 @@ _VALID_PROVIDERS = ("gemini", "openai")
 
 @dataclass(frozen=True)
 class Settings:
-    demo_mode: str = "baked"
+    demo_mode: str = "live"
     demo_token: str | None = None
 
     # Provider + keys. Default is Gemini (free tier) — best for a student build.
@@ -58,7 +58,7 @@ class Settings:
         return self.demo_mode == "baked"
 
     def ensure_live_ready(self) -> None:
-        """Startup guard. No-op in baked mode. Checks the key for the ACTIVE provider."""
+        """Startup guard. Checks the key for the ACTIVE provider."""
         if not self.is_live:
             return
         if self.llm_provider == "gemini":
@@ -74,13 +74,19 @@ class Settings:
     @classmethod
     def from_env(cls) -> "Settings":
         env_path = Path(__file__).resolve().parents[2] / ".env"
-        load_dotenv(dotenv_path=env_path, override=False)
+        load_dotenv(dotenv_path=env_path, override=True)
+        
+        # Check if keys exist in environment
+        g_key = os.getenv("GEMINI_API_KEY") or None
+        o_key = os.getenv("OPENAI_API_KEY") or None
+        mode = os.getenv("DEMO_MODE", "live" if (g_key or o_key) else "baked").strip().lower()
+
         return cls(
-            demo_mode=os.getenv("DEMO_MODE", "baked").strip().lower(),
+            demo_mode=mode if mode in _VALID_MODES else "live",
             demo_token=os.getenv("DEMO_TOKEN") or None,
             llm_provider=os.getenv("LLM_PROVIDER", "gemini").strip().lower(),
-            gemini_api_key=os.getenv("GEMINI_API_KEY") or None,
-            openai_api_key=os.getenv("OPENAI_API_KEY") or None,
+            gemini_api_key=g_key,
+            openai_api_key=o_key,
             llm_model=os.getenv("LLM_MODEL", "gemini-2.5-flash"),
             extraction_max_retries=int(os.getenv("EXTRACTION_MAX_RETRIES", "2")),
             conf_w_extraction=float(os.getenv("CONF_W_EXTRACTION", "0.5")),

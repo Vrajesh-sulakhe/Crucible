@@ -138,7 +138,7 @@ export default function WorkspacePage() {
           setProducts(newProds);
           fetchMetrics().then(setMetrics);
         }}
-        onLoadBaked={loadData}
+        onReset={loadData}
       />
 
       {/* Dense High-Precision Product Grid */}

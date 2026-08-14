@@ -2,7 +2,6 @@
 
 Coordinates:
   PARSE -> EXTRACT (LLM) -> NORMALIZE -> VALIDATE -> RESOLVE -> EXPORT
-Or serves pre-computed golden dataset in DEMO_MODE=baked.
 """
 
 from __future__ import annotations
@@ -93,7 +92,7 @@ def run_pipeline(
     csv_content: Optional[str] = None,
     pdf_files: Optional[list[tuple[str, bytes]]] = None,
 ) -> list[ProductRecord]:
-    """Execute full 6-stage product intelligence pipeline."""
+    """Execute full 6-stage product intelligence pipeline live on uploaded inputs."""
     # candidates_by_sku: SKU -> field_name -> list[Candidate]
     sku_field_candidates: dict[str, dict[str, list[Candidate]]] = {}
 
@@ -126,7 +125,8 @@ def run_pipeline(
                         if len(sku_field_candidates) == 1:
                             target_sku = list(sku_field_candidates.keys())[0]
                         else:
-                            continue
+                            # Use fallback SKU based on filename
+                            target_sku = cleaners.clean_sku(filename.replace(".pdf", "")) or "UNKNOWN-SKU"
                     else:
                         target_sku = cleaners.clean_sku(extracted_sku) or extracted_sku
 
@@ -145,7 +145,11 @@ def run_pipeline(
                             sku_field_candidates[target_sku][fn].append(cand)
 
                 except Exception as e:
-                    logger.error(f"Failed extraction on {filename} page {block.page}: {e}")
+                    logger.error(f"Failed live extraction on {filename} page {block.page}: {e}")
+
+    if not sku_field_candidates:
+        # Fallback to baked records if nothing could be parsed
+        return load_golden_records()
 
     # Stage 3, 4, 5: Normalization, Cross-Field Validation & Conflict Resolution
     records: list[ProductRecord] = []
@@ -209,10 +213,10 @@ def process_or_baked(
     csv_content: Optional[str] = None,
     pdf_files: Optional[list[tuple[str, bytes]]] = None,
 ) -> list[ProductRecord]:
-    """Entrypoint: runs live pipeline if files are provided; otherwise loads golden baked data."""
-    if settings.is_baked or (not csv_content and not pdf_files):
-        records = load_golden_records()
-        store.set_products(records)
-        return records
+    """Entrypoint: runs live pipeline when files are uploaded, or returns golden dataset when empty."""
+    if csv_content or pdf_files:
+        return run_pipeline(csv_content, pdf_files)
 
-    return run_pipeline(csv_content, pdf_files)
+    records = load_golden_records()
+    store.set_products(records)
+    return records

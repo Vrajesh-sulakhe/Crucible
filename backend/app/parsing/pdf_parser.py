@@ -6,6 +6,7 @@ Uses pdfplumber with PyMuPDF (fitz) fallback.
 
 from __future__ import annotations
 
+import io
 import os
 from dataclasses import dataclass
 from typing import Optional
@@ -60,8 +61,6 @@ def parse_pdf_bytes(
             pass
     return blocks
 
-
-import io
 
 def parse_pdf(
     path: str,

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Cpu, Terminal, ShieldCheck, Download, Activity, FileSpreadsheet, ExternalLink } from "lucide-react";
+import { Cpu, Terminal, ShieldCheck, Download, Activity, PlaySquare, ExternalLink } from "lucide-react";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -59,6 +59,13 @@ export default function RootLayout({
               >
                 <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
                 REVIEW QUEUE
+              </Link>
+              <Link
+                href="/presentation"
+                className="px-3 py-1.5 rounded bg-surface/40 hover:bg-purple-950/40 border border-border/40 hover:border-purple-500/50 text-xs font-mono font-medium text-slate-300 hover:text-purple-300 transition-all flex items-center gap-1.5"
+              >
+                <PlaySquare className="w-3.5 h-3.5 text-purple-400" />
+                SLIDES DECK
               </Link>
               <a
                 href="http://127.0.0.1:8000/export/csv"

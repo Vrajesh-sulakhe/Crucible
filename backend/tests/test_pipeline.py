@@ -64,7 +64,5 @@ class TestPipelineAndMerging(unittest.TestCase):
         self.assertGreater(metrics["total_products"], 0)
         self.assertGreater(metrics["avg_confidence"], 0.7)
         self.assertGreater(metrics["enrichment_rate_pct"], 80.0)
-
-
 if __name__ == "__main__":
     unittest.main()

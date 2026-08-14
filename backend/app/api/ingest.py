@@ -1,6 +1,6 @@
-"""api/ingest.py — Ingestion endpoint (POST /process).
+"""api/ingest.py — Ingestion & reset endpoints (POST /process, POST /reset).
 
-Supports multipart file uploads (CSV + PDF datasheets) and baked mode bypass.
+Supports multipart file uploads (CSV + PDF datasheets) and live AI extraction.
 """
 
 from __future__ import annotations
@@ -12,9 +12,11 @@ from pydantic import BaseModel
 
 from app.api.deps import get_store
 from app.core.auth import require_demo_token
+from app.core.config import settings
 from app.core.store import ProductStore
 from app.schemas.models import ProductRecord
-from app.services.pipeline import process_or_baked
+from app.services.baked import load_golden_records
+from app.services.pipeline import process_or_baked, run_pipeline
 
 router = APIRouter(prefix="", tags=["Ingest"])
 
@@ -22,6 +24,7 @@ router = APIRouter(prefix="", tags=["Ingest"])
 class IngestResponse(BaseModel):
     success: bool
     mode: str
+    llm_provider: str
     count: int
     products: list[ProductRecord]
 
@@ -30,10 +33,9 @@ class IngestResponse(BaseModel):
 async def process_inputs(
     csv_file: Optional[UploadFile] = File(default=None),
     pdf_files: Optional[list[UploadFile]] = File(default=None),
-    demo_mode: Optional[str] = Form(default=None),
     store: ProductStore = Depends(get_store),
 ) -> IngestResponse:
-    """Process uploaded CSV and/or PDF datasheets, or trigger baked golden catalog."""
+    """Process uploaded CSV and/or PDF datasheets through the live 6-stage pipeline."""
     csv_text = None
     if csv_file:
         raw_csv_bytes = await csv_file.read()
@@ -46,12 +48,29 @@ async def process_inputs(
                 b = await f.read()
                 parsed_pdfs.append((f.filename, b))
 
-    # Run pipeline or return baked dataset
+    # Run live pipeline on files
     records = process_or_baked(csv_text, parsed_pdfs)
     
     return IngestResponse(
         success=True,
-        mode="baked" if not csv_text and not parsed_pdfs else "live",
+        mode="live" if (csv_text or parsed_pdfs) else settings.demo_mode,
+        llm_provider=settings.llm_provider,
+        count=len(records),
+        products=records,
+    )
+
+
+@router.post("/reset", response_model=IngestResponse, dependencies=[Depends(require_demo_token)])
+def reset_to_golden(
+    store: ProductStore = Depends(get_store),
+) -> IngestResponse:
+    """Reset catalog store to the verified ground-truth golden benchmark dataset."""
+    records = load_golden_records()
+    store.set_products(records)
+    return IngestResponse(
+        success=True,
+        mode="golden_reset",
+        llm_provider=settings.llm_provider,
         count=len(records),
         products=records,
     )

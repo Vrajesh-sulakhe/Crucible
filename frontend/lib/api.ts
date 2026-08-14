@@ -2,7 +2,7 @@ import { MetricsResponse, ProductRecord, ReviewQueueItem, FieldDecision } from "
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
 
-export async function fetchHealth(): Promise<{ status: string; demo_mode: string; products_in_store: number }> {
+export async function fetchHealth(): Promise<{ status: string; demo_mode: string; llm_provider: string; products_in_store: number }> {
   const res = await fetch(`${API_BASE}/health`, { cache: "no-store" });
   if (!res.ok) throw new Error("Health check failed");
   return res.json();
@@ -80,7 +80,15 @@ export async function uploadAndProcess(
     method: "POST",
     body: formData,
   });
-  if (!res.ok) throw new Error("Processing failed");
+  if (!res.ok) throw new Error("Live pipeline processing failed");
+  return res.json();
+}
+
+export async function resetCatalog(): Promise<{ success: boolean; mode: string; count: number; products: ProductRecord[] }> {
+  const res = await fetch(`${API_BASE}/reset`, {
+    method: "POST",
+  });
+  if (!res.ok) throw new Error("Reset to golden failed");
   return res.json();
 }
 

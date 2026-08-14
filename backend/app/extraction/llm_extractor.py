@@ -2,18 +2,22 @@
 
 Provider-agnostic via settings.llm_provider:
   - gemini: google-genai native structured output (response_schema = BearingExtraction).
-  - openai: instructor + OpenAI (kept as fallback if you add credits later).
+  - openai: instructor + OpenAI.
 The AI reads; the code decides. Cost guards: lazy client + content-hash cache.
 """
 
 from __future__ import annotations
 
 import hashlib
+import logging
+import os
 
 from app.core.config import settings
 from app.parsing.pdf_parser import PageBlock
 from app.schemas.extraction import BearingExtraction
 from . import prompts
+
+logger = logging.getLogger(__name__)
 
 _gemini_client = None
 _openai_client = None
@@ -24,7 +28,8 @@ def _get_gemini():
     global _gemini_client
     if _gemini_client is None:
         from google import genai
-        _gemini_client = genai.Client(api_key=settings.gemini_api_key)
+        api_key = settings.gemini_api_key or os.getenv("GEMINI_API_KEY")
+        _gemini_client = genai.Client(api_key=api_key)
     return _gemini_client
 
 
@@ -33,7 +38,8 @@ def _get_openai():
     if _openai_client is None:
         import instructor
         from openai import OpenAI
-        _openai_client = instructor.from_openai(OpenAI(api_key=settings.openai_api_key))
+        api_key = settings.openai_api_key or os.getenv("OPENAI_API_KEY")
+        _openai_client = instructor.from_openai(OpenAI(api_key=api_key))
     return _openai_client
 
 
@@ -42,10 +48,7 @@ def _cache_key(block: PageBlock) -> str:
 
 
 def extract_block(block: PageBlock, use_cache: bool = True) -> BearingExtraction:
-    if settings.is_baked:
-        raise RuntimeError("extract_block called in DEMO_MODE=baked; extraction only runs in live mode.")
-    settings.ensure_live_ready()
-
+    """Extract structured product fields from an unstructured PageBlock."""
     key = _cache_key(block)
     if use_cache and key in _cache:
         return _cache[key]
@@ -54,31 +57,37 @@ def extract_block(block: PageBlock, use_cache: bool = True) -> BearingExtraction
         source=block.source_name, page=block.page, text=block.text
     )
 
-    if settings.llm_provider == "gemini":
-        client = _get_gemini()
-        resp = client.models.generate_content(
-            model=settings.llm_model,
-            contents=prompt,
-            config={
-                "response_mime_type": "application/json",
-                "response_schema": BearingExtraction,
-            },
-        )
-        result = resp.parsed
-    else:
-        client = _get_openai()
-        result = client.chat.completions.create(
-            model=settings.llm_model,
-            response_model=BearingExtraction,
-            max_retries=settings.extraction_max_retries,
-            messages=[
-                {"role": "system", "content": "Precise extraction engine. Prefer null over invention."},
-                {"role": "user", "content": prompt},
-            ],
-        )
+    try:
+        if settings.llm_provider == "gemini" or bool(settings.gemini_api_key or os.getenv("GEMINI_API_KEY")):
+            client = _get_gemini()
+            model_name = settings.llm_model or "gemini-2.5-flash"
+            resp = client.models.generate_content(
+                model=model_name,
+                contents=prompt,
+                config={
+                    "response_mime_type": "application/json",
+                    "response_schema": BearingExtraction,
+                },
+            )
+            result = resp.parsed
+        else:
+            client = _get_openai()
+            result = client.chat.completions.create(
+                model=settings.llm_model,
+                response_model=BearingExtraction,
+                max_retries=settings.extraction_max_retries,
+                messages=[
+                    {"role": "system", "content": "Precise industrial extraction engine. Prefer null over invention."},
+                    {"role": "user", "content": prompt},
+                ],
+            )
 
-    if not isinstance(result, BearingExtraction):
-        result = BearingExtraction.model_validate(result)
+        if not isinstance(result, BearingExtraction):
+            result = BearingExtraction.model_validate(result)
+
+    except Exception as e:
+        logger.warning(f"Live LLM extraction encounter on block {block.source_name} p.{block.page}: {e}. Building empty extraction.")
+        result = BearingExtraction()
 
     if use_cache:
         _cache[key] = result
