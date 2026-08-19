@@ -99,3 +99,10 @@ export function getExportJsonUrl(): string {
 export function getExportCsvUrl(): string {
   return `${API_BASE}/export/csv`;
 }
+
+export async function fetchProductGaps(sku: string): Promise<import("./types").GapAnalysisResult> {
+  const res = await fetch(`${API_BASE}/products/${encodeURIComponent(sku)}/gaps`, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Failed to fetch attribute gaps for ${sku}`);
+  return res.json();
+}
+

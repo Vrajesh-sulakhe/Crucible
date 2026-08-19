@@ -1,0 +1,23 @@
+# Realistic Ugly Industrial Catalog Dump (Legacy ERP / Distributor Export)
+# Contains messy headers, missing values, mixed imperial/metric, fractional notation, and conflicting legacy numbers.
+Part #,Item Description,Bearing Category,Bore (d),OD (D),Width (B),Mass / Wt,Cr (Dynamic),C0 (Static),Max Speed (RPM),Material Spec,Closure,Standard Norms
+6205-2RSH,SKF Deep Groove Ball Bearing 6205,Ball Bearings,25 mm,52 mm,15 mm,0.25 kg,14.8 kN,,8500 rpm,Chrome Steel (52100),Rubber Contact Seal (2RSH),ISO 15
+6000-ZZ,NSK Miniature Ball Bearing,Miniature,10 mm,26 mm,8 mm,19 g,4750 N,1.96 kN,22000 r/min,High Carbon Chromium Steel,Metal Shield (ZZ),ISO 15
+6308-2RS,FAG High Capacity Radial Bearing,Radial,40 mm,90 mm,23 mm,0.64 kg,42.5 kN,24.0 kN,,100Cr6,Nitrile Rubber (2RS),DIN 625-1
+32005-X,Timken Tapered Roller Bearing Single Row,Tapered Roller,25 mm,50 mm,15 mm,0.12 kg,28.5 kN,32.5 kN,7500 rpm,Case Carburized Alloy Steel,Open,ISO 355
+22208-E,SKF Spherical Roller Bearing,Spherical Roller,40 mm,80 mm,23 mm,0.53 kg,96.5 kN,90.0 kN,6000 min-1,Bearing Steel,Open,ISO 15
+7206-B-TVP,FAG Angular Contact Ball Bearing,Angular Contact,30 mm,62 mm,16 mm,0.21 kg,22.4 kN,13.7 kN,12000 rpm,Chrome Steel,Open,DIN 628-1
+608-2RS,Miniature Skate / Electric Motor Bearing,Miniature,8 mm,22 mm,7 mm,12 g,3.3 kN,1.37 kN,34000 rpm,Stainless Steel 440C,Rubber Seal (2RS),ABEC-7
+6805-2RS,Thin Section Ball Bearing,Thin Section,25 mm,37 mm,7 mm,0.022 kg,4.3 kN,2.6 kN,11000 rpm,Chrome Steel,Rubber Seals,ISO 15
+NU205-E-XL-TVP2,INA Cylindrical Roller Bearing,Cylindrical Roller,25 mm,52 mm,15 mm,0.14 kg,34.0 kN,27.0 kN,15000 rpm,Chrome Steel,Open,DIN 5412-1
+UCP205-16,Dodge Pillow Block Mounted Ball Bearing Unit,Mounted Units,1",5.5 in,1.5 in,1.8 lbs,14.0 kN,7.85 kN,5000 rpm,Cast Iron Housing / Chrome Steel,Contact Seal with Flinger,JIS B 1559
+LM11949/LM11910,Timken Imperial Tapered Roller Bearing Set,Tapered Roller,3/4 in,1.781 in,0.655 in,0.28 lbs,6800 lbf,7100 lbf,11000 rpm,Alloy Steel,Open,ABMA
+30204,NTN Metric Tapered Roller Bearing,Tapered Roller,20 mm,47 mm,15.25 mm,0.125 kg,30.5 kN,31.0 kN,9000 rpm,High Carbon Chrome Steel,Open,ISO 355
+51105,SKF Single Direction Thrust Ball Bearing,Thrust Ball,25 mm,42 mm,11 mm,0.059 kg,19.5 kN,37.5 kN,6300 rpm,Chrome Steel,Open,ISO 104
+HK2016,IKO Drawn Cup Needle Roller Bearing,Needle Roller,20 mm,26 mm,16 mm,0.023 kg,12.8 kN,17.2 kN,14000 rpm,Chrome Steel,Open,DIN 618
+6204-C3,SKF Deep Groove Ball Bearing C3 Radial Clearance,Ball Bearings,20 mm,47 mm,14 mm,0.11 kg,13.5 kN,6.55 kN,18000 rpm,AISI 52100,Open,ISO 5753-1
+6305-ZZ,NSK Shielded Deep Groove Ball Bearing,Ball Bearings,25 mm,62 mm,17 mm,0.23 kg,23.5 kN,10.9 kN,12000 rpm,Chrome Steel,Metal Shields (ZZ),ISO 15
+22310-E,FAG Heavy Duty Spherical Roller Bearing,Spherical Roller,50 mm,110 mm,40 mm,1.90 kg,232 kN,245 kN,4500 rpm,Chrome Steel,Open,DIN 635-2
+7308-BECBP,SKF Angular Contact Ball Bearing 40 Degree,Angular Contact,40 mm,90 mm,23 mm,0.62 kg,46.5 kN,33.5 kN,9500 rpm,Chrome Steel,Open,ISO 15
+RNA4904,INA Needle Roller Bearing without Inner Ring,Needle Roller,25 mm,37 mm,17 mm,0.051 kg,20.8 kN,27.0 kN,16000 rpm,Chrome Steel,Open,DIN 617
+6004-2RSH,SKF Sealed Deep Groove Ball Bearing,Ball Bearings,20 mm,42 mm,12 mm,0.069 kg,9.95 kN,5.0 kN,15000 rpm,Chrome Steel,Rubber Seals (2RSH),ISO 15

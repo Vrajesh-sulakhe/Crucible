@@ -16,35 +16,41 @@ import {
   Maximize2,
   Home,
   Scale,
+  Sparkles,
+  Zap,
 } from "lucide-react";
+import { CrucibleLogo } from "@/components/CrucibleLogo";
 
 const SLIDES = [
   {
     id: 1,
-    tag: "UNILOG HACKATHON 2026 // UNIHACK",
+    tag: "UNILOG HACKATHON 2026",
     title: "CRUCIBLE",
     subtitle: "AI-Powered Product Intelligence for Industrial Commerce",
     content: (
-      <div className="space-y-6 text-center max-w-3xl mx-auto font-mono">
-        <div className="p-6 rounded-xl bg-surface-1 border border-cyan-500/40 shadow-[0_0_40px_rgba(0,240,255,0.15)]">
-          <p className="text-lg text-slate-200 leading-relaxed font-sans">
+      <div className="space-y-6 text-center max-w-3xl mx-auto">
+        <div className="flex justify-center mb-2">
+          <CrucibleLogo size={56} showText={false} />
+        </div>
+        <div className="p-6 rounded-3xl bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 shadow-sm">
+          <p className="text-lg text-slate-900 dark:text-white leading-relaxed font-bold">
             Transforming messy industrial catalogs, complex PDF datasheets, and legacy ERP dumps into{" "}
-            <strong className="text-cyan-300 font-mono">verifiable, accurate, and commerce-ready product intelligence</strong>.
+            <strong className="text-blue-600 dark:text-blue-400">verifiable, accurate, and commerce-ready product intelligence</strong>.
           </p>
         </div>
 
         <div className="grid grid-cols-3 gap-4 pt-4 text-xs">
-          <div className="p-4 rounded bg-surface-2 border border-border">
-            <span className="text-cyan-400 font-bold block text-sm mb-1">0% MATH ERROR</span>
-            <span className="text-slate-400 font-sans">Deterministic Pint Unit Conversions</span>
+          <div className="p-5 rounded-2xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/[0.08]">
+            <span className="text-blue-600 dark:text-blue-400 font-extrabold block text-base mb-1 font-mono">0% MATH ERROR</span>
+            <span className="text-slate-600 dark:text-white/50 font-medium">Deterministic Pint Unit Conversions</span>
           </div>
-          <div className="p-4 rounded bg-surface-2 border border-border">
-            <span className="text-emerald-400 font-bold block text-sm mb-1">PHYSICAL LAWS</span>
-            <span className="text-slate-400 font-sans">Automated Engineering Bounds Check</span>
+          <div className="p-5 rounded-2xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/[0.08]">
+            <span className="text-emerald-600 dark:text-emerald-400 font-extrabold block text-base mb-1 font-mono">PHYSICAL LAWS</span>
+            <span className="text-slate-600 dark:text-white/50 font-medium">Automated Engineering Bounds Check</span>
           </div>
-          <div className="p-4 rounded bg-surface-2 border border-border">
-            <span className="text-amber-400 font-bold block text-sm mb-1">VERBATIM PROOF</span>
-            <span className="text-slate-400 font-sans">Page-Numbered Citation Audit Trail</span>
+          <div className="p-5 rounded-2xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/[0.08]">
+            <span className="text-amber-600 dark:text-amber-400 font-extrabold block text-base mb-1 font-mono">VERBATIM PROOF</span>
+            <span className="text-slate-600 dark:text-white/50 font-medium">Page-Numbered Citation Audit Trail</span>
           </div>
         </div>
       </div>
@@ -54,161 +60,68 @@ const SLIDES = [
     id: 2,
     tag: "THE PROBLEM",
     title: "The $100M Industrial Catalog Bottleneck",
-    subtitle: "Why Traditional AI Fails in Industrial Master Data Management (MDM)",
+    subtitle: "Why manual industrial onboarding breaks at scale",
     content: (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto font-mono text-xs">
-        <div className="p-5 rounded-xl bg-rose-950/20 border border-rose-500/40 space-y-3">
-          <div className="flex items-center gap-2 text-rose-400 font-bold text-sm">
-            <AlertTriangle className="w-5 h-5" />
-            <span>GENERIC AI CHATBOT APPROACH</span>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-xs text-left max-w-4xl mx-auto">
+        <div className="p-6 rounded-3xl bg-rose-50 dark:bg-rose-500/10 border border-rose-200 dark:border-rose-500/20 space-y-3">
+          <div className="w-9 h-9 rounded-xl bg-rose-100 dark:bg-rose-500/20 text-rose-700 dark:text-rose-400 flex items-center justify-center font-bold font-mono">
+            01
           </div>
-          <ul className="space-y-2.5 text-slate-300 font-sans leading-relaxed">
-            <li className="flex items-start gap-2">
-              <span className="text-rose-400 font-mono">✕</span>
-              <span><strong>Math Hallucinations</strong>: Converts 1 inch to 25mm instead of 25.4mm, causing expensive machine downtime.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-rose-400 font-mono">✕</span>
-              <span><strong>Black-Box Trust</strong>: Outputs self-confidence ratings with zero verifiable evidence back to the PDF.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-rose-400 font-mono">✕</span>
-              <span><strong>Ignores Physics</strong>: Allows Outer Diameter &lt; Bore Diameter if OCR is noisy.</span>
-            </li>
-          </ul>
+          <h3 className="font-bold text-slate-900 dark:text-white text-sm">Discrepant Multi-Source Claims</h3>
+          <p className="text-slate-600 dark:text-white/60 leading-relaxed">
+            Distributor catalogs quote gross packed weight (0.25 kg); engineering datasheets quote net mass (0.13 kg). Naive ingestion leads to massive catalog errors.
+          </p>
         </div>
 
-        <div className="p-5 rounded-xl bg-cyan-950/20 border border-cyan-500/40 space-y-3">
-          <div className="flex items-center gap-2 text-cyan-400 font-bold text-sm">
-            <CheckCircle2 className="w-5 h-5" />
-            <span>THE CRUCIBLE SOLUTION</span>
+        <div className="p-6 rounded-3xl bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 space-y-3">
+          <div className="w-9 h-9 rounded-xl bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 flex items-center justify-center font-bold font-mono">
+            02
           </div>
-          <ul className="space-y-2.5 text-slate-300 font-sans leading-relaxed">
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-400 font-mono">✓</span>
-              <span><strong>The AI Reads, The Code Decides</strong>: Confines LLMs strictly to unstructured parsing; all math is deterministic.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-400 font-mono">✓</span>
-              <span><strong>Verbatim Grounding</strong>: Every attribute includes exact source document, page number, and quote.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-cyan-400 font-mono">✓</span>
-              <span><strong>Physical Constraint Guards</strong>: Hard physical and mechanical rules prevent impossible data entry.</span>
-            </li>
-          </ul>
+          <h3 className="font-bold text-slate-900 dark:text-white text-sm">Unit & Format Hallucinations</h3>
+          <p className="text-slate-600 dark:text-white/60 leading-relaxed">
+            Imperial fractions (1-1/4&quot;), European decimal commas (25,4 mm), and force vs mass (kN vs kg) cause LLMs to invent incorrect engineering specifications.
+          </p>
+        </div>
+
+        <div className="p-6 rounded-3xl bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/20 space-y-3">
+          <div className="w-9 h-9 rounded-xl bg-purple-100 dark:bg-purple-500/20 text-purple-700 dark:text-purple-400 flex items-center justify-center font-bold font-mono">
+            03
+          </div>
+          <h3 className="font-bold text-slate-900 dark:text-white text-sm">Missing Auditability & Trust</h3>
+          <p className="text-slate-600 dark:text-white/60 leading-relaxed">
+            Industrial buyers require exact page-level PDF proof before ordering critical engineering components into mission-critical machinery.
+          </p>
         </div>
       </div>
     ),
   },
   {
     id: 3,
-    tag: "ARCHITECTURE",
-    title: "6-Stage Hybrid Engine",
-    subtitle: "Deterministic Pipelines Combined with High-Speed Structured Extraction",
+    tag: "THE ARCHITECTURE",
+    title: "The AI Reads. The Code Decides.",
+    subtitle: "Hybrid Deterministic Architecture",
     content: (
-      <div className="max-w-4xl mx-auto space-y-4 font-mono text-xs">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-          <div className="p-3.5 rounded bg-surface-1 border border-border">
-            <span className="text-cyan-400 font-bold text-xs">[01] PARSE</span>
-            <p className="text-white font-bold mt-1">pdfplumber & PyMuPDF</p>
-            <p className="text-[11px] text-slate-400 font-sans mt-0.5">Extracts multi-page tables & preserved page coordinates.</p>
-          </div>
-          <div className="p-3.5 rounded bg-surface-1 border border-border">
-            <span className="text-purple-400 font-bold text-xs">[02] EXTRACT (AI)</span>
-            <p className="text-white font-bold mt-1">Gemini 2.5 Flash</p>
-            <p className="text-[11px] text-slate-400 font-sans mt-0.5">Strict schema extraction with verbatim quotation extraction.</p>
-          </div>
-          <div className="p-3.5 rounded bg-surface-1 border border-border">
-            <span className="text-cyan-400 font-bold text-xs">[03] NORMALIZE</span>
-            <p className="text-white font-bold mt-1">Pint Physics Engine</p>
-            <p className="text-[11px] text-slate-400 font-sans mt-0.5">Converts inches, mm, lbs, kg, kN, rpm without math error.</p>
-          </div>
-          <div className="p-3.5 rounded bg-surface-1 border border-border">
-            <span className="text-emerald-400 font-bold text-xs">[04] VALIDATE</span>
-            <p className="text-white font-bold mt-1">Physical Law Checker</p>
-            <p className="text-[11px] text-slate-400 font-sans mt-0.5">Enforces Outer &gt; Bore, section thickness, and speed factors.</p>
-          </div>
-          <div className="p-3.5 rounded bg-surface-1 border border-border">
-            <span className="text-cyan-400 font-bold text-xs">[05] RESOLVE</span>
-            <p className="text-white font-bold mt-1">Authority Ranking</p>
-            <p className="text-[11px] text-slate-400 font-sans mt-0.5">Datasheets (1.0) &gt; Catalogs (0.8) &gt; ERP (0.6) &gt; CSV (0.2).</p>
-          </div>
-          <div className="p-3.5 rounded bg-surface-1 border border-border">
-            <span className="text-emerald-400 font-bold text-xs">[06] EXPORT</span>
-            <p className="text-white font-bold mt-1">Commerce PIM / ERP</p>
-            <p className="text-[11px] text-slate-400 font-sans mt-0.5">Exports instant CSV/JSON ready for Shopify, SAP, and Magento.</p>
-          </div>
-        </div>
-      </div>
-    ),
-  },
-  {
-    id: 4,
-    tag: "EXPLAINABILITY",
-    title: "Forensic Evidence & Mathematical Proof",
-    subtitle: "Transparent Confidence Scoring with Zero Black Box",
-    content: (
-      <div className="max-w-3xl mx-auto space-y-4 font-mono text-xs">
-        <div className="p-5 rounded-xl bg-surface-1 border border-cyan-500/50 space-y-3">
-          <div className="flex items-center justify-between border-b border-border/80 pb-2">
-            <span className="text-cyan-300 font-bold flex items-center gap-2">
-              <Scale className="w-4 h-4" />
-              CONFIDENCE FORMULA PROOF
+      <div className="max-w-4xl mx-auto space-y-5 text-xs text-left">
+        <div className="p-6 rounded-3xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/[0.08] grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-3">
+            <span className="text-[11px] font-mono font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">
+              1. Perception Plane (Gemini 2.5)
             </span>
-            <span className="text-emerald-400 font-bold">CALCULATED SCORE: 98.4%</span>
+            <h4 className="text-sm font-bold text-slate-900 dark:text-white">Structured Multimodal Extraction</h4>
+            <p className="text-slate-600 dark:text-white/60 leading-relaxed">
+              Extracts dimensional attributes, mechanical ratings, and page-numbered verbatim snippets from complex engineering PDFs and table layouts.
+            </p>
           </div>
 
-          <div className="p-3 rounded bg-surface-2 border border-border text-[12px] space-y-1 text-slate-200">
-            <div className="text-slate-400 text-[10px]">WEIGHTED COMPOSITE FORMULA:</div>
-            <div className="text-cyan-300 font-bold">
-              Confidence = (0.5 × C_extraction) + (0.3 × A_source_authority) + (0.2 × V_validation)
-            </div>
-            <div className="text-slate-300 pt-1">
-              = (0.5 × 0.98) + (0.3 × 1.00 [Datasheet]) + (0.2 × 1.00 [Physical Laws Passed]) = <span className="text-emerald-400 font-bold">0.990</span>
-            </div>
+          <div className="space-y-3">
+            <span className="text-[11px] font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider block">
+              2. Trust Plane (Python Core)
+            </span>
+            <h4 className="text-sm font-bold text-slate-900 dark:text-white">Pure Deterministic Verification</h4>
+            <p className="text-slate-600 dark:text-white/60 leading-relaxed">
+              Pint unit dimensional algebra, ISO envelope geometric constraints, and Source Authority hierarchy (Datasheet 1.0 &gt; CSV 0.60).
+            </p>
           </div>
-
-          <div className="bg-surface-card p-3 rounded border border-border text-[11px] text-slate-300">
-            <span className="text-cyan-400 font-bold block mb-1">VERBATIM GROUNDED CITATION:</span>
-            <span className="italic">"SKF 6205-2RSH Principal Dimensions: Bore diameter (d) 25 mm, Outer diameter (D) 52 mm, Width (B) 15 mm — Page 2"</span>
-          </div>
-        </div>
-      </div>
-    ),
-  },
-  {
-    id: 5,
-    tag: "BUSINESS IMPACT & ROI",
-    title: "Measurable Impact for Industrial Commerce",
-    subtitle: "Massive Efficiency Gains for Unilog Enterprise Customers",
-    content: (
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto font-mono text-center">
-        <div className="p-6 rounded-xl bg-surface-1 border border-cyan-500/40">
-          <Clock className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
-          <span className="text-3xl font-extrabold text-white block">85%</span>
-          <span className="text-xs text-cyan-300 font-bold uppercase mt-1 block">Time Saved</span>
-          <p className="text-[11px] text-slate-400 font-sans mt-2">
-            Saves ~15 minutes of manual catalog lookup per industrial part.
-          </p>
-        </div>
-
-        <div className="p-6 rounded-xl bg-surface-1 border border-emerald-500/40">
-          <ShieldCheck className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
-          <span className="text-3xl font-extrabold text-emerald-400 block">0%</span>
-          <span className="text-xs text-emerald-300 font-bold uppercase mt-1 block">Math Error</span>
-          <p className="text-[11px] text-slate-400 font-sans mt-2">
-            Eliminates costly returns caused by wrong bore or clearance dimensions.
-          </p>
-        </div>
-
-        <div className="p-6 rounded-xl bg-surface-1 border border-purple-500/40">
-          <Layers className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-          <span className="text-3xl font-extrabold text-white block">1-Click</span>
-          <span className="text-xs text-purple-300 font-bold uppercase mt-1 block">Commerce Export</span>
-          <p className="text-[11px] text-slate-400 font-sans mt-2">
-            Direct sync into Shopify, SAP, BigCommerce, and Unilog PIM.
-          </p>
         </div>
       </div>
     ),
@@ -218,14 +131,16 @@ const SLIDES = [
 export default function PresentationPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const prevSlide = () => setCurrentSlide((c) => Math.max(0, c - 1));
-  const nextSlide = () => setCurrentSlide((c) => Math.min(SLIDES.length - 1, c + 1));
+  const nextSlide = () => setCurrentSlide((prev) => Math.min(prev + 1, SLIDES.length - 1));
+  const prevSlide = () => setCurrentSlide((prev) => Math.max(prev - 1, 0));
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight" || e.key === " ") {
+        e.preventDefault();
         nextSlide();
       } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
         prevSlide();
       }
     };
@@ -236,33 +151,33 @@ export default function PresentationPage() {
   const slide = SLIDES[currentSlide];
 
   return (
-    <div className="min-h-[85vh] flex flex-col justify-between font-mono space-y-6">
-      {/* Header controls */}
-      <div className="flex items-center justify-between pb-3 border-b border-border/80 text-xs">
+    <div className="min-h-[85vh] flex flex-col justify-between space-y-6">
+      {/* Top Controls */}
+      <div className="flex items-center justify-between">
         <Link
-          href="/"
-          className="inline-flex items-center gap-1.5 text-slate-400 hover:text-cyan-300 transition-colors uppercase tracking-wider"
+          href="/workspace"
+          className="px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] text-slate-700 dark:text-white/70 hover:text-slate-950 dark:hover:text-white text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-xs"
         >
           <Home className="w-4 h-4" />
           Workspace
         </Link>
 
-        <div className="flex items-center gap-2">
-          <span className="text-[11px] text-slate-400">
-            SLIDE {currentSlide + 1} OF {SLIDES.length}
+        <div className="flex items-center gap-3">
+          <span className="text-xs text-slate-500 dark:text-white/40 font-mono font-bold">
+            Slide {currentSlide + 1} of {SLIDES.length}
           </span>
-          <div className="flex items-center gap-1 bg-surface-1 p-1 rounded border border-border">
+          <div className="flex items-center gap-1 bg-slate-100 dark:bg-white/[0.04] p-1 rounded-full border border-slate-200 dark:border-white/[0.08] shadow-xs">
             <button
               onClick={prevSlide}
               disabled={currentSlide === 0}
-              className="p-1 rounded hover:bg-surface-card disabled:opacity-30 text-slate-300 hover:text-white transition-colors"
+              className="p-1.5 rounded-full hover:bg-slate-200 dark:hover:bg-white/[0.08] disabled:opacity-30 text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white transition-colors"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={nextSlide}
               disabled={currentSlide === SLIDES.length - 1}
-              className="p-1 rounded hover:bg-surface-card disabled:opacity-30 text-slate-300 hover:text-white transition-colors"
+              className="p-1.5 rounded-full hover:bg-slate-200 dark:hover:bg-white/[0.08] disabled:opacity-30 text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white transition-colors"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -271,15 +186,15 @@ export default function PresentationPage() {
       </div>
 
       {/* Main Slide Card */}
-      <div className="hud-panel corner-bracket rounded-xl p-8 sm:p-12 flex-1 flex flex-col justify-center animate-in fade-in duration-300">
-        <div className="text-center mb-8 space-y-2">
-          <span className="text-xs px-2.5 py-0.5 rounded bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-bold uppercase tracking-wider">
+      <div className="crucible-card p-8 sm:p-12 flex-1 flex flex-col justify-center animate-in fade-in duration-300">
+        <div className="text-center mb-8 space-y-2.5">
+          <span className="text-xs px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 text-blue-700 dark:text-blue-300 font-bold uppercase tracking-wider">
             {slide.tag}
           </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             {slide.title}
           </h1>
-          <p className="text-sm text-slate-400 font-sans max-w-xl mx-auto">
+          <p className="text-sm text-slate-600 dark:text-white/50 max-w-xl mx-auto font-medium">
             {slide.subtitle}
           </p>
         </div>
@@ -288,15 +203,15 @@ export default function PresentationPage() {
       </div>
 
       {/* Footer Navigation */}
-      <div className="flex items-center justify-between pt-3 border-t border-border/80 text-[11px] text-slate-500">
-        <span>Use [Left] / [Right] arrow keys or spacebar to navigate</span>
+      <div className="flex items-center justify-between pt-3.5 border-t border-slate-200 dark:border-white/[0.06] text-xs text-slate-500 dark:text-white/40">
+        <span>Use Left/Right arrow keys or spacebar to navigate</span>
         <div className="flex items-center gap-1.5">
           {SLIDES.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrentSlide(i)}
-              className={`w-2.5 h-2.5 rounded-full transition-all ${
-                i === currentSlide ? "bg-cyan-400 w-6" : "bg-slate-700 hover:bg-slate-500"
+              className={`h-2 rounded-full transition-all ${
+                i === currentSlide ? "bg-blue-600 dark:bg-white w-7" : "bg-slate-300 dark:bg-white/20 hover:bg-slate-400 dark:hover:bg-white/40 w-2"
               }`}
             />
           ))}

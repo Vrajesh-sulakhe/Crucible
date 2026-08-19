@@ -9,6 +9,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query, status
 from app.api.deps import get_store
 from app.core.store import ProductStore
 from app.schemas.models import FieldDecision, FieldStatus, ProductRecord
+from app.services.gap_analyzer import GapAnalysisResult, analyze_product_gaps
 
 router = APIRouter(prefix="", tags=["Products"])
 
@@ -75,3 +76,19 @@ def explain_field(
         )
 
     return product.fields[field]
+
+
+@router.get("/products/{sku}/gaps", response_model=GapAnalysisResult)
+def get_product_gaps(
+    sku: str,
+    store: ProductStore = Depends(get_store),
+) -> GapAnalysisResult:
+    """Analyze missing attributes for an SKU, pinpointing commercial impact and recovery sources."""
+    product = store.get_by_sku(sku)
+    if not product:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Product with SKU '{sku}' not found in catalog.",
+        )
+    return analyze_product_gaps(product)
+

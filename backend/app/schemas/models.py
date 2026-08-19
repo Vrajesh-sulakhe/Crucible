@@ -46,10 +46,10 @@ class SourceType(str, Enum):
 # COMBINE authority with extraction+validation live in core/config.py.
 SOURCE_AUTHORITY: dict[SourceType, float] = {
     SourceType.MANUFACTURER_DATASHEET: 1.0,
-    SourceType.TECHNICAL_CATALOG: 0.8,
-    SourceType.ERP_EXPORT: 0.6,
-    SourceType.WEBSITE: 0.4,
-    SourceType.CSV: 0.2,
+    SourceType.TECHNICAL_CATALOG: 0.85,
+    SourceType.ERP_EXPORT: 0.75,
+    SourceType.CSV: 0.60,
+    SourceType.WEBSITE: 0.40,
 }
 
 

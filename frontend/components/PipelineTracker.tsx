@@ -69,22 +69,24 @@ export const PipelineTracker: React.FC<PipelineTrackerProps> = ({
   className,
 }) => {
   return (
-    <div className={cn("hud-panel corner-bracket rounded-lg p-4 font-mono", className)}>
-      <div className="flex items-center justify-between pb-3 mb-3 border-b border-border/70 text-xs">
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-sm bg-cyan-400 animate-pulse" />
-          <span className="font-bold tracking-wider text-slate-300 uppercase">
-            Execution Pipeline Architecture // 6-Stage Deterministic Flow
+    <div className={cn("hud-panel rounded-2xl p-5", className)}>
+      <div className="flex items-center justify-between pb-3.5 mb-3.5 border-b border-white/[0.06] text-xs">
+        <div className="flex items-center gap-2.5">
+          <div className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
+          <span className="font-semibold text-slate-200">
+            Deterministic Pipeline Architecture
           </span>
+          <span className="text-slate-600">·</span>
+          <span className="text-slate-400">6-Stage Live Execution Spine</span>
         </div>
-        <div className="flex items-center gap-2 text-[10px] text-slate-400">
-          <span className="px-2 py-0.5 rounded bg-surface-card border border-border/80 text-cyan-300">
-            TOTAL PIPELINE LATENCY: ~858ms
+        <div className="flex items-center gap-2">
+          <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-slate-300 font-mono">
+            Pipeline Latency: <strong className="text-sky-300">~858ms</strong>
           </span>
         </div>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 relative">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 relative">
         {STAGES.map((stage, idx) => {
           const Icon = stage.icon;
           const isComplete = idx + 1 <= activeStage;
@@ -94,49 +96,51 @@ export const PipelineTracker: React.FC<PipelineTrackerProps> = ({
             <div
               key={stage.step}
               className={cn(
-                "p-3 rounded border flex flex-col justify-between transition-all relative overflow-hidden",
+                "p-3.5 rounded-xl border flex flex-col justify-between transition-all relative overflow-hidden",
                 isComplete
-                  ? "bg-surface/90 border-border hover:border-cyan-500/50"
-                  : "bg-surface/30 border-border/30 opacity-50",
-                isCurrent && "border-cyan-400 bg-surface-raised shadow-[0_0_15px_rgba(0,240,255,0.15)]"
+                  ? "bg-slate-900/60 border-white/[0.08] hover:border-sky-500/40 shadow-sm"
+                  : "bg-slate-950/40 border-white/[0.03] opacity-40",
+                isCurrent && "border-sky-500/60 bg-sky-950/20 shadow-[0_0_20px_rgba(56,189,248,0.1)] ring-1 ring-sky-500/30"
               )}
             >
               {/* Top Row: Stage Step + Latency */}
-              <div className="flex items-center justify-between text-[10px] mb-2">
-                <span className="font-bold text-cyan-400">[{stage.step}]</span>
-                <span className="text-slate-500">{stage.latency}</span>
+              <div className="flex items-center justify-between text-xs mb-2">
+                <span className="font-mono text-[11px] font-semibold text-sky-400">
+                  {stage.step}
+                </span>
+                <span className="text-[10px] text-slate-500 font-mono">{stage.latency}</span>
               </div>
 
               {/* Middle: Icon & Title */}
               <div className="my-1">
-                <div className="flex items-center gap-1.5 mb-0.5">
+                <div className="flex items-center gap-1.5 mb-1">
                   <Icon
                     className={cn(
                       "w-3.5 h-3.5",
                       stage.type === "ai"
-                        ? "text-purple-400"
+                        ? "text-indigo-400"
                         : stage.type === "trust"
-                        ? "text-cyan-400"
+                        ? "text-sky-400"
                         : "text-emerald-400"
                     )}
                   />
-                  <span className="font-bold text-xs text-white tracking-wide">
+                  <span className="font-semibold text-xs text-white">
                     {stage.name}
                   </span>
                 </div>
-                <p className="text-[10px] text-slate-400 truncate">{stage.engine}</p>
+                <p className="text-[11px] text-slate-400 truncate">{stage.engine}</p>
               </div>
 
               {/* Bottom Tag */}
-              <div className="mt-2 pt-2 border-t border-border/50">
+              <div className="mt-2.5 pt-2 border-t border-white/[0.06]">
                 <span
                   className={cn(
-                    "text-[9px] px-1.5 py-0.5 rounded block truncate text-center font-bold tracking-tight",
+                    "text-[10px] px-2 py-0.5 rounded-md block truncate text-center font-medium",
                     stage.type === "ai"
-                      ? "bg-purple-950/80 text-purple-300 border border-purple-800/40"
+                      ? "bg-indigo-500/10 text-indigo-300 border border-indigo-500/20"
                       : stage.type === "trust"
-                      ? "bg-cyan-950/80 text-cyan-300 border border-cyan-800/40"
-                      : "bg-emerald-950/80 text-emerald-300 border border-emerald-800/40"
+                      ? "bg-sky-500/10 text-sky-300 border border-sky-500/20"
+                      : "bg-emerald-500/10 text-emerald-300 border border-emerald-500/20"
                   )}
                 >
                   {stage.tag}

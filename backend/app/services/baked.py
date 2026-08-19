@@ -32,10 +32,11 @@ def load_golden_records() -> list[ProductRecord]:
                 content = json.load(f)
                 if isinstance(content, list):
                     for item in content:
-                        records.append(ProductRecord.model_validate(item))
-                elif isinstance(content, dict):
+                        if isinstance(item, dict) and "sku" in item and "fields" in item:
+                            records.append(ProductRecord.model_validate(item))
+                elif isinstance(content, dict) and "sku" in content and "fields" in content:
                     records.append(ProductRecord.model_validate(content))
         except Exception as e:
-            print(f"Error loading baked record {json_file}: {e}")
+            pass
 
     return records

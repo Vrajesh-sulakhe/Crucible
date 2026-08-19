@@ -66,4 +66,29 @@ export interface MetricsResponse {
   populated_fields: number;
   enrichment_rate_pct: number;
   estimated_hours_saved: number;
+  conflicts_detected?: number;
+  conflicts_auto_resolved?: number;
+  fields_enriched?: number;
+  raw_claims_count?: number;
+  normalized_count?: number;
 }
+
+export interface AttributeGap {
+  field: string;
+  field_label: string;
+  severity: "CRITICAL" | "HIGH" | "MEDIUM" | "LOW";
+  commercial_impact: string;
+  recommended_sources: string[];
+  recovery_priority: number;
+}
+
+export interface GapAnalysisResult {
+  sku: string;
+  product_name: string;
+  commerce_readiness_score: number;
+  populated_fields_count: number;
+  missing_fields_count: number;
+  gaps: AttributeGap[];
+  recommended_action: string;
+}
+

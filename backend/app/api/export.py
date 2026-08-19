@@ -24,6 +24,11 @@ class MetricsResponse(BaseModel):
     populated_fields: int
     enrichment_rate_pct: float
     estimated_hours_saved: float
+    conflicts_detected: int = 0
+    conflicts_auto_resolved: int = 0
+    fields_enriched: int = 0
+    raw_claims_count: int = 0
+    normalized_count: int = 0
 
 
 @router.get("/export/json")

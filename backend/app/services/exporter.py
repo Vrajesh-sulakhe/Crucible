@@ -85,8 +85,15 @@ def compute_metrics(records: list[ProductRecord]) -> dict[str, Any]:
             "validated_count": 0,
             "conflict_resolved_count": 0,
             "needs_review_count": 0,
+            "total_fields": 0,
+            "populated_fields": 0,
             "enrichment_rate_pct": 0.0,
             "estimated_hours_saved": 0.0,
+            "conflicts_detected": 0,
+            "conflicts_auto_resolved": 0,
+            "fields_enriched": 0,
+            "raw_claims_count": 0,
+            "normalized_count": 0,
         }
 
     confidences = [r.overall_confidence for r in records]
@@ -96,14 +103,41 @@ def compute_metrics(records: list[ProductRecord]) -> dict[str, Any]:
     conflicts = sum(1 for r in records if r.overall_status == FieldStatus.CONFLICT_RESOLVED)
     needs_review = sum(1 for r in records if r.overall_status == FieldStatus.NEEDS_REVIEW)
 
-    # Calculate total fields enriched vs missing
+    # Calculate total fields enriched vs missing and candidate details
     total_fields = 0
     populated_fields = 0
+    raw_claims_count = 0
+    normalized_count = 0
+    conflicts_detected = 0
+    conflicts_auto_resolved = 0
+    fields_enriched = 0
+
     for r in records:
         for dec in r.fields.values():
             total_fields += 1
+            cand_count = len(dec.candidates)
+            raw_claims_count += cand_count
+
             if dec.status != FieldStatus.MISSING and dec.final_value is not None:
                 populated_fields += 1
+
+            for c in dec.candidates:
+                if c.normalized_value is not None:
+                    normalized_count += 1
+
+            # Conflict detection: more than 1 distinct normalized value or explicit status
+            if cand_count > 1:
+                norm_vals = {str(c.normalized_value).strip().lower() for c in dec.candidates if c.normalized_value is not None}
+                if len(norm_vals) > 1 or dec.status == FieldStatus.CONFLICT_RESOLVED:
+                    conflicts_detected += 1
+                    if dec.status == FieldStatus.CONFLICT_RESOLVED or dec.status == FieldStatus.VALIDATED:
+                        conflicts_auto_resolved += 1
+
+            # Fields enriched: populated via datasheet/PDF where no CSV candidate existed or CSV was null
+            csv_cands = [c for c in dec.candidates if c.evidence.source_type.value == "csv"]
+            has_valid_csv = any(c.raw_value is not None and str(c.raw_value).strip() != "" for c in csv_cands)
+            if not has_valid_csv and dec.final_value is not None and cand_count > 0:
+                fields_enriched += 1
 
     enrichment_rate = round((populated_fields / max(total_fields, 1)) * 100, 1)
 
@@ -120,4 +154,10 @@ def compute_metrics(records: list[ProductRecord]) -> dict[str, Any]:
         "populated_fields": populated_fields,
         "enrichment_rate_pct": enrichment_rate,
         "estimated_hours_saved": hours_saved,
+        "conflicts_detected": conflicts_detected,
+        "conflicts_auto_resolved": conflicts_auto_resolved,
+        "fields_enriched": fields_enriched,
+        "raw_claims_count": raw_claims_count,
+        "normalized_count": normalized_count,
     }
+
