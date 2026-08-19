@@ -376,17 +376,33 @@ export const ProductTable: React.FC<ProductTableProps> = ({
           <tbody className="divide-y divide-slate-100 dark:divide-white/[0.04] text-xs">
             {filteredAndSorted.length === 0 ? (
               <tr>
-                <td colSpan={9} className="py-14 text-center text-slate-500 dark:text-white/40 space-y-2">
-                  <p>No products matched the query criteria: &quot;{searchTerm}&quot;</p>
-                  <button
-                    onClick={() => {
-                      setSearchTerm("");
-                      handleStatusChange("ALL");
-                    }}
-                    className="text-blue-600 dark:text-blue-400 underline text-xs font-semibold"
-                  >
-                    Reset all filters
-                  </button>
+                <td colSpan={10} className="py-24 text-center">
+                  <div className="flex flex-col items-center justify-center space-y-4">
+                    <div className="w-16 h-16 rounded-full bg-slate-100 dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.1] flex items-center justify-center text-slate-400 dark:text-white/40 mb-2 shadow-inner">
+                      <Search className="w-6 h-6 text-slate-400 dark:text-white/30" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                        {products.length === 0 ? "Workspace is Empty" : "No Match Found"}
+                      </p>
+                      <p className="text-[13px] text-slate-500 dark:text-white/50 max-w-md mx-auto mt-1.5 leading-relaxed">
+                        {products.length === 0 
+                          ? "There are no active records in the store. Upload a distributor catalog or engineering datasheet below to begin the AI extraction pipeline."
+                          : `No products matched the query criteria: "${searchTerm}". Try adjusting your filters.`}
+                      </p>
+                    </div>
+                    {products.length > 0 && (
+                      <button
+                        onClick={() => {
+                          setSearchTerm("");
+                          handleStatusChange("ALL");
+                        }}
+                        className="mt-2 px-5 py-2 bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 font-semibold rounded-full text-xs hover:bg-blue-100 dark:hover:bg-blue-500/20 transition-all border border-blue-200 dark:border-blue-500/30 shadow-sm"
+                      >
+                        Reset all filters
+                      </button>
+                    )}
+                  </div>
                 </td>
               </tr>
             ) : (
