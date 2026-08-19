@@ -86,7 +86,7 @@ export default function RootLayout({
                     href="http://127.0.0.1:8000/export/csv"
                     target="_blank"
                     rel="noreferrer"
-                    className="px-4 py-1.5 rounded-full text-[13px] font-medium text-slate-600 hover:text-slate-900 dark:text-white/50 dark:hover:text-white/80 hover:bg-slate-100 dark:hover:bg-white/[0.04] transition-all flex items-center gap-1.5"
+                    className="px-4 py-1.5 rounded-full text-[13px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 hover:border-emerald-300 dark:text-emerald-300 dark:bg-emerald-950/30 dark:border-emerald-500/30 dark:hover:bg-emerald-900/50 transition-all flex items-center gap-1.5 shadow-sm active:scale-95"
                   >
                     <Download className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                     Export CSV

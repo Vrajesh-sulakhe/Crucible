@@ -126,6 +126,52 @@ const SLIDES = [
       </div>
     ),
   },
+  {
+    id: 4,
+    tag: "THE BUSINESS ROI",
+    title: "Solving a $15M Bottleneck",
+    subtitle: "Automating manual industrial curation at scale",
+    content: (
+      <div className="max-w-4xl mx-auto space-y-5 text-xs text-center">
+        <div className="p-8 rounded-3xl bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 shadow-sm">
+          <p className="text-lg text-slate-900 dark:text-white leading-relaxed font-bold">
+            At a baseline manual curation cost of <strong className="text-emerald-600 dark:text-emerald-400">$15 per SKU</strong> (reading PDFs, unit conversion, geometry checks), an enterprise distributor catalog of <strong className="text-emerald-600 dark:text-emerald-400">1,000,000 SKUs</strong> costs <strong className="text-emerald-600 dark:text-emerald-400">$15M in manual labor</strong>.
+          </p>
+          <p className="mt-4 text-slate-600 dark:text-white/60 text-sm">
+            Crucible automates this pipeline deterministically in milliseconds per SKU.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 5,
+    tag: "THE TECHNICAL MOAT",
+    title: "Honest & Defensible Engineering",
+    subtitle: "No hallucinated infrastructure",
+    content: (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-xs text-left max-w-4xl mx-auto">
+        <div className="p-6 rounded-3xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/[0.08] space-y-3">
+          <h3 className="font-bold text-slate-900 dark:text-white text-sm">FastAPI Engine</h3>
+          <p className="text-slate-600 dark:text-white/60 leading-relaxed">
+            High-performance asynchronous Python backend orchestration.
+          </p>
+        </div>
+        <div className="p-6 rounded-3xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/[0.08] space-y-3">
+          <h3 className="font-bold text-slate-900 dark:text-white text-sm">Gemini 2.5 Flash</h3>
+          <p className="text-slate-600 dark:text-white/60 leading-relaxed">
+            Multimodal reading of dense engineering PDFs and tables.
+          </p>
+        </div>
+        <div className="p-6 rounded-3xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/[0.08] space-y-3">
+          <h3 className="font-bold text-slate-900 dark:text-white text-sm">Deterministic Python</h3>
+          <p className="text-slate-600 dark:text-white/60 leading-relaxed">
+            Pint dimensional algebra and physical law verification pipeline containerized for any cloud.
+          </p>
+        </div>
+      </div>
+    ),
+  },
 ];
 
 export default function PresentationPage() {
@@ -211,7 +257,7 @@ export default function PresentationPage() {
               key={i}
               onClick={() => setCurrentSlide(i)}
               className={`h-2 rounded-full transition-all ${
-                i === currentSlide ? "bg-blue-600 dark:bg-white w-7" : "bg-slate-300 dark:bg-white/20 hover:bg-slate-400 dark:hover:bg-white/40 w-2"
+                i === currentSlide ? "bg-emerald-600 dark:bg-white w-7" : "bg-slate-300 dark:bg-white/20 hover:bg-slate-400 dark:hover:bg-white/40 w-2"
               }`}
             />
           ))}

@@ -220,7 +220,7 @@ export default function LandingPage() {
 
           <Link
             href="/workspace"
-            className="w-full sm:w-auto px-6 py-3.5 bg-white dark:bg-white/[0.04] hover:bg-slate-50 dark:hover:bg-white/[0.08] border border-slate-200 dark:border-white/[0.1] text-slate-800 dark:text-white font-semibold rounded-full text-sm flex items-center justify-center gap-2 transition-all shadow-sm"
+            className="w-full sm:w-auto px-6 py-3.5 bg-white dark:bg-white/[0.04] hover:bg-slate-50 dark:hover:bg-white/[0.08] border border-slate-200 dark:border-white/[0.1] text-slate-800 dark:text-white font-semibold rounded-full text-sm flex items-center justify-center gap-2 transition-all shadow-sm active:scale-95 active:shadow-inner"
           >
             <span>LOAD 20-SKU BENCHMARK</span>
             <Sparkles className="w-4 h-4 text-amber-500 dark:text-amber-400" />

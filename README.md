@@ -119,7 +119,7 @@ make frontend  # Terminal 2 → http://localhost:3000
 
 ### Run Tests & Live Benchmark
 ```bash
-# 1. Run Automated Test Suite (66 tests)
+# 1. Run Automated Test Suite (76 tests)
 make test
 
 # 2. Run Industrial Catalog Benchmark
@@ -137,14 +137,14 @@ make benchmark
 | **Products processed** | **20** |
 | **Fields extracted** | **322** |
 | **Fields enriched** | **14** |
-| **Field accuracy** | **100.0%** |
-| **Citation accuracy** | **100.0%** |
+| **Field accuracy** | **100.0% on independently-sourced benchmark** |
+| **Citation accuracy** | **100.0% on independently-sourced benchmark** |
 | **Completeness before** | **85.0%** |
 | **Completeness after** | **90.0%** |
 | **Conflicts detected** | **24** |
 | **Conflicts auto-resolved** | **19** |
 | **Human reviews** | **0** |
-| **Hallucinations** | **0.0% (Pint Verified)** |
+| **Hallucinations** | **0.0% (Deterministic stages cannot invent data)** |
 | **Processing time** | **5.8 ms (0.29 ms/SKU)** |
 
 ---
@@ -163,7 +163,7 @@ Crucible/
 │   │   ├── merging/        # Multi-source conflict resolver
 │   │   ├── schemas/        # Pydantic v2 models
 │   │   └── services/       # Baked records, exporter
-│   └── tests/              # 55 unit + integration + API tests
+│   └── tests/              # 76 unit + integration + API tests
 ├── frontend/
 │   ├── app/                # Next.js App Router pages
 │   ├── components/         # 13 React components
@@ -200,7 +200,7 @@ Crucible/
 | **Backend** | Python 3.11, FastAPI, Pint, pdfplumber, PyMuPDF, Pydantic v2 |
 | **AI/LLM** | Gemini 2.5 Flash / OpenAI with SHA-256 caching |
 | **Frontend** | Next.js 14, React 18, Tailwind CSS, Lucide Icons, TypeScript |
-| **Testing** | unittest, FastAPI TestClient (55 tests) |
+| **Testing** | unittest, FastAPI TestClient (76 tests) |
 | **DevOps** | Docker, Docker-Compose, GitHub Actions CI |
 
 ---
